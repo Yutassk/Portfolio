@@ -33,13 +33,21 @@ body {
 /* Player
 ---------------------------------------- */
 .player_container {
-  justify-content: center;
+  position: relative;
+  justify-content: ;
   align-items: center;
 }
 .player_container img {
   position: absolute;
+  /* height: 50%; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
 }
+.moving_line {
 
+}
 
 
 

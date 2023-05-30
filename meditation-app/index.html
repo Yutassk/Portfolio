@@ -16,8 +16,9 @@
 <body>
   <main>
     <div id="bgMovie" class="bg_movie">
-      <video src="./video/beach.mp4" loop></video>
-      <source src="./video/rain.mp4" loop>
+      <video src="./video/beach.mp4" loop>
+        <source src="./video/rain.mp4" loop>
+      </video>
     </div>
 
     <div id="setTimer" class="set_timer wrapper">
@@ -26,9 +27,11 @@
       <button id="min10">10min</button>
     </div>
 
-    <section id="player" class="player_container wrapper">
-      <audio src="./sounds/beach.mp3" id="sound" class="sound"></audio>
-      <div id="timerAnimation" class="timer_animation"></div>
+    <div id="player" class="player_container wrapper">
+      <audio src="./sounds/beach.mp3" id="sound" class="sound">
+        <source src="./sounds/rain.mp3">
+      </audio>
+
       <img src="./svg/moving-outline.svg" id="movingLine" class="moving_line" alt="">
       <img src="./svg/track-outline.svg" id="trackLine" class="track_line" alt="">
       <img src="./svg/play.svg" alt="" id="playBtn" class="play">
@@ -36,7 +39,7 @@
       <img src="./svg/pause.svg" alt="" id="pauseBtn" class="pause">
 
       <h3 id="countDown" class="count_down"></h3>
-    </section>
+    </div>
 
     <div id="soundPicker" class="sound_picker wrapper">
       <img class="beach icon" src="./svg/beach.svg" alt="">
