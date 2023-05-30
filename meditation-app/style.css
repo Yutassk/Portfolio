@@ -1,1 +1,33 @@
 @charset UTF-8;
+/* General
+--------------------------------------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.icon {
+  border-radius: 50%;
+  padding: 30px;
+  width: 120px;
+}
+
+/* Icon
+---------------------------------------- */
+.beach{
+  background-color: #A14f49;
+}
+.rain{
+  background-color: #4972A1;
+}
+
+.player_container {
+  background-color: #A14f49;
+}
