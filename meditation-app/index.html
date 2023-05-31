@@ -14,38 +14,37 @@
 </head>
 
 <body>
-  <main>
-    <div id="bgMovie" class="bg_movie">
-      <video src="./video/beach.mp4" loop>
-        <source src="./video/rain.mp4" loop>
+  <div class="app">
+    <div class="vid_container">
+      <video loop>
+        <source src="./video/rain.mp4" type="video/mp4">
       </video>
     </div>
 
-    <div id="setTimer" class="set_timer wrapper">
-      <button id="min2">2min</button>
-      <button id="min5">5min</button>
-      <button id="min10">10min</button>
+    <div class="time_select">
+      <button data-time="120">2 Minutes</button>
+      <button data-time="300">5 Minutes</button>
+      <button data-time="600">10 Minutes</button>
     </div>
 
-    <div id="player" class="player_container wrapper">
-      <audio src="./sounds/beach.mp3" id="sound" class="sound">
+    <div class="player_container">
+      <audio class="song">
         <source src="./sounds/rain.mp3">
       </audio>
-
-      <img src="./svg/moving-outline.svg" id="movingLine" class="moving_line" alt="">
-      <img src="./svg/track-outline.svg" id="trackLine" class="track_line" alt="">
-      <img src="./svg/play.svg" alt="" id="playBtn" class="play">
+      <img src="./svg/play.svg" id="playBtn" class="play">
+      <svg src="./svg/track-outline.svg" id="trackLine" class="track_outline"></svg>
+      <svg src="./svg/moving-outline.svg" id="movingLine" class="moving_outline"></svg>
       <img src="./svg/replay.svg" alt="" id="replayBtn" class="replay">
-      <img src="./svg/pause.svg" alt="" id="pauseBtn" class="pause">
 
-      <h3 id="countDown" class="count_down"></h3>
+      <h3 id="timeDisplay" class="time_display">0:00</h3>
     </div>
 
-    <div id="soundPicker" class="sound_picker wrapper">
-      <img class="beach icon" src="./svg/beach.svg" alt="">
-      <img class="rain icon" src="./svg/rain.svg" alt="">
+    <div id="soundPicker" class="sound_picker">
+      <button data-sound="./sounds/rain.mp3" data-vieo="./video/rain.mp4"><img src="./svg/rain.svg" alt=""></button>
+      <button data-sound="./sounds/beach.mp3" data-vieo="./video/beach.mp4"><img src="./svg/rain.svg" alt=""></button>
     </div>
-  </main>
+  </div>
+
   <script src="app.js"></script>
 </body>
 
