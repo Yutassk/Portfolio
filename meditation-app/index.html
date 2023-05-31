@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.min.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
   <title>Audio App</title>
@@ -32,8 +32,14 @@
         <source src="./sounds/rain.mp3">
       </audio>
       <img src="./svg/play.svg" id="playBtn" class="play">
-      <svg src="./svg/track-outline.svg" id="trackLine" class="track_outline"></svg>
-      <svg src="./svg/moving-outline.svg" id="movingLine" class="moving_outline"></svg>
+      <svg class="track_outline" width="453" height="453" viewBox="0 0 453 453" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="226.5" cy="226.5" r="216.5" stroke="white" stroke-width="20" />
+      </svg>
+      <svg class="moving_outline" width="453" height="453" viewBox="0 0 453 453" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="226.5" cy="226.5" r="216.5" stroke="#018EBA" stroke-width="20" />
+      </svg>
       <img src="./svg/replay.svg" alt="" id="replayBtn" class="replay">
 
       <h3 id="timeDisplay" class="time_display">0:00</h3>
@@ -41,7 +47,7 @@
 
     <div id="soundPicker" class="sound_picker">
       <button data-sound="./sounds/rain.mp3" data-vieo="./video/rain.mp4"><img src="./svg/rain.svg" alt=""></button>
-      <button data-sound="./sounds/beach.mp3" data-vieo="./video/beach.mp4"><img src="./svg/rain.svg" alt=""></button>
+      <button data-sound="./sounds/beach.mp3" data-vieo="./video/beach.mp4"><img src="./svg/beach.svg" alt=""></button>
     </div>
   </div>
 

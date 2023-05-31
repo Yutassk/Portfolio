@@ -1,73 +1,103 @@
 @charset UTF-8;
 /* General
 --------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html {
   font-size: 100%;
 }
 
 body {
   font-family: sans-serif;
+}
+
+.app{
   height: 100vh;
-}
-
-.wrapper {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
 }
 
-.icon {
-  border-radius: 50%;
-  padding: 30px;
-  width: 120px;
+.time_select,
+.sound_picker {
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex: 1;
 }
-/* Movie
+
+.time_select button,
+.sound_picker button {
+  color: #fff;
+  width: 30%;
+  height: 10%;
+  background: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: all 0.5s ease;
+}
+.sound_picker button{
+  border: none;
+  height: 120px;
+  width: 120px;
+  padding: 30px;
+  border-radius: 50%;
+}
+.sound_picker button:nth-child(1) {
+  background: #4972a1;
+}
+.sound_picker button:nth-child(2) {
+  background: #a14f49;
+}
+.sound_picker img {
+  height: 100%;
+}
+.time_select button:hover {
+  background: #fff;
+  color: #2c2c2c;
+}
+
+.player_container {
+  position: relative;
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.player_container svg{ 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.player_container svg circle {
+  transition: all 0.2s ease-in-out;
+}
+
+.time_display {
+  color: #FFF;
+  position: absolute;
+  font-size: 50px;
+  bottom: 10%;
+}
+/* Video
 ---------------------------------------- */
-.bg_movie video{
+video {
   position: fixed;
   top: 0%;
   left: 0%;
   width: 100%;
-  height: auto;
   z-index: -10;
 }
-
-/* Player
----------------------------------------- */
-.player_container {
-  position: relative;
-  justify-content: ;
-  align-items: center;
-}
-.player_container img {
-  position: absolute;
-  /* height: 50%; */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  pointer-events: none;
-}
-.moving_line {
-
-}
-
-
-
-
-
-/* Sound Picker
----------------------------------------- */
-.sound_picker {
-  
-}
-
-.beach{
-  background-color: #A14f49;
-}
-.rain{
-  background-color: #4972A1;
-}
-
-
-
-
-
-
