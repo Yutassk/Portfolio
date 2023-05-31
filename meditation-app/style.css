@@ -1,4 +1,5 @@
 @charset UTF-8;
+
 /* General
 --------------------------------------- */
 * {
@@ -6,6 +7,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   font-size: 100%;
 }
@@ -14,7 +16,7 @@ body {
   font-family: sans-serif;
 }
 
-.app{
+.app {
   height: 100vh;
   display: flex;
   justify-content: space-evenly;
@@ -29,6 +31,7 @@ body {
   justify-content: space-evenly;
   flex-direction: column;
   flex: 1;
+  align-items: center;
 }
 
 .time_select button,
@@ -37,31 +40,41 @@ body {
   width: 30%;
   height: 10%;
   background: none;
-  font-size: 20px;
+  font-size: 22px;
   border-radius: 5px;
   cursor: pointer;
   border: 2px solid #fff;
   transition: all 0.5s ease;
 }
-.sound_picker button{
+
+.sound_picker button {
   border: none;
-  height: 120px;
-  width: 120px;
-  padding: 30px;
+  height: 150px;
+  width: 150px;
+  padding: 40px;
   border-radius: 50%;
 }
+
 .sound_picker button:nth-child(1) {
   background: #4972a1;
 }
+
 .sound_picker button:nth-child(2) {
   background: #a14f49;
 }
+
 .sound_picker img {
   height: 100%;
 }
+
 .time_select button:hover {
   background: #fff;
   color: #2c2c2c;
+}
+
+.replay {
+  width: 50px;
+  height: 50px;
 }
 
 .player_container {
@@ -74,7 +87,7 @@ body {
   flex: 1;
 }
 
-.player_container svg{ 
+.player_container svg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -92,6 +105,7 @@ body {
   font-size: 50px;
   bottom: 10%;
 }
+
 /* Video
 ---------------------------------------- */
 video {
