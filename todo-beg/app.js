@@ -5,28 +5,31 @@ const ul = document.querySelector('ul')
 
 const todos = JSON.parse(localStorage.getItem('todos'));
 
+// ストレージに保存されているものがあれば、画面更新たときに再度リストに追加
 if (todos) {
     todos.forEach((todo) => {
         add(todo);
     });
 }
 
+// formでエンター押したらTodoリスト追加してフォームをクリア
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     add();
 });
 
+// Todoリストに入力内容を追加
 function add(todo) {
     let todoText = input.value;
 
     if (todo) {
-        todoText = todo.text;
+        todoText = todo;
     }
 
     if (todoText) {  //暗黙的型変換 todoText > 0 がこの一文で可能。
         const li = document.createElement('li');
 
-        li.textContent = input.value;
+        li.textContent = todoText;
         li.classList.add('list-group-item')
         
         ul.appendChild(li);
@@ -35,6 +38,7 @@ function add(todo) {
     }
 }
 
+// liの要素をローカルストレージに保存
 function saveData() {
     const lists = document.querySelectorAll('li');
     const todos = [];
