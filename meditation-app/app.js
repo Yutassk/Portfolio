@@ -18,4 +18,12 @@ let fakeDuration = 600;
 
 $outline.style.strokeDashoffset = outlineLength;
 $outline.style.strokeDasharray = outlineLength;
-timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`;
+$timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`;
+
+$sounds.forEach($sound => {
+    $sound.addEventListener('click', function() {
+        $song.src = this.getAttribute('data-sound');
+        $video.src = this.getAttribute('data-video');
+        checkPlaying(song);
+    });
+});
