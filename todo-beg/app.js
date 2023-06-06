@@ -5,7 +5,7 @@ const ul = document.querySelector('ul')
 
 const todos = JSON.parse(localStorage.getItem('todos'));
 
-// ストレージに保存されているものがあれば、画面更新たときに再度リストに追加
+// ストレージに保存されているものがあれば、画面更新したときに再度リストに追加
 if (todos) {
     todos.forEach((todo) => {
         add(todo);
