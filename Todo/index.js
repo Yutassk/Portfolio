@@ -12,11 +12,13 @@ if (todos) {
         add(todo);
     });
 }
+
 // エンター押したらinputのvalue取得
 $form.addEventListener('submit', function (e) {
     e.preventDefault();
     add();
 });
+
 // 取得したvalueをli属性でulに追加
 function add(todo) {
     let todoText = $input.value;
