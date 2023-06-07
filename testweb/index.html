@@ -15,13 +15,15 @@
 
 <body>
     <header>
-        <h1>WED</h1>
-        <nav>
-            <li>NEWS</li>
-            <li>ABOUT</li>
-            <li>BUSINESS</li>
-            <li>COMPANY</li>
-        </nav>
+        <div class="header_left">
+            <h1>WED</h1>
+            <nav>
+                <li><a href="">NEWS</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#business">BUSINESS</a></li>
+                <li><a href="#company">COMPANY</a></li>
+            </nav>
+        </div>
         <div class="doc_request">
             <p>資料請求</p>
         </div>
@@ -29,11 +31,13 @@
     <main>
         <section class="hero">
             <img src="./img/mainvisual.jpg" alt="">
-        </section>
+        </section><!-- hero -->
         <section class="news">
-            <h1 class="title" id="news">NEWS</h1>
-            <p>ニュース</p>
-            <hr>
+            <div class="wrapper">
+                <h1 class="title" id="news">NEWS</h1>
+                <p>ニュース</p>
+                <hr>
+            </div>
             <ul class="news_content">
                 <li>
                     <p class="date">2021.01.01</p>
@@ -53,18 +57,22 @@
             </ul>
         </section> <!-- news -->
         <section class="about">
-            <img src="./img/about.jpg" alt="">
-            <h1 class="title">ABOUT</h1>
-            <p>私たちについて</p>
-            <hr>
+            <div class="wrapper">
+                <img src="./img/about.jpg" alt="">
+                <h1 class="title">ABOUT</h1>
+                <p>私たちについて</p>
+                <hr>
+            </div>
             <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
                 テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
                 テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
         </section><!-- about -->
         <section class="business">
-            <h1 class="title">BUSINESS</h1>
-            <p>事業内容</p>
-            <hr>
+            <div class="wrapper">
+                <h1 class="title">BUSINESS</h1>
+                <p>事業内容</p>
+                <hr>
+            </div>
             <div class="business_tile">
                 <div class="tile_right">
                     <div class="tile1">
@@ -89,10 +97,12 @@
             </div>
         </section><!-- business -->
         <section class="company">
-            <img src="./img/company.jpg" alt="">
-            <h1 class="title">COMPANY</h1>
-            <p>会社概要</p>
-            <hr>
+            <div class="wrapper">
+                <img src="./img/company.jpg" alt="">
+                <h1 class="title">COMPANY</h1>
+                <p>会社概要</p>
+                <hr>
+            </div>
             <dl class="company_data">
                 <dt>会社名</dt>
                 <dd>ウェブエンターテイメントデザイン株式会社</dd>
@@ -114,7 +124,7 @@
     </main>
     <footer>
         <h2>WED</h2>
-        <small>:& Web Entertainment Design Inc.</small>
+        <small>&copy Web Entertainment Design Inc.</small>
         <ul class="company_data_en">
             <li>Web Entertainment Design Inc.</li>
             <li>West Building 3F</li>
