@@ -84,17 +84,20 @@ hr {
 /* News
 ---------------------------------------------- */
 .news {
+    max-width: 1000px;
     margin: 3rem;
+    background-color: ;
 }
 
 .news_content {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .news_content li {
-    /* border-left: 2px solid #2c2c2c; */
-    /* width: 33%; */
-    /* margin:  20px; */
+    border-left: 2px solid #2c2c2c;
+    width: 33%;
+    background-color: #2c2c2c;
 }
 
 .news_content li:first-child {
