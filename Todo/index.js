@@ -34,6 +34,10 @@ function add(todo) {
         li.textContent = todoText;
         li.classList.add('list-group-item');
 
+        if(todo && todo.completed) {
+            li.classList.add('text-decoration-line-through');
+        }
+
         // 左クリックで取り消し線
         li.addEventListener('click', function() {
             this.classList.toggle('text-decoration-line-through');
@@ -69,3 +73,13 @@ function saveData() {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+/*
+const texts = ['abc'];
+
+if(texts.length <= 100 && texts.length > 1){
+texts.forEach(function (text) {
+    console.log(text);
+})
+}
+
+console.log(texts);*/
