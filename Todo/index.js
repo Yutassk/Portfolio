@@ -24,7 +24,7 @@ function add(todo) {
     let todoText = $input.value;
 
     // localstrageにデータがあればTodoに追加する
-    if(todo) {
+    if (todo) {
         todoText = todo.text;
     }
 
@@ -34,18 +34,18 @@ function add(todo) {
         li.textContent = todoText;
         li.classList.add('list-group-item');
 
-        if(todo && todo.completed) {
+        if (todo && todo.completed) {
             li.classList.add('text-decoration-line-through');
         }
 
         // 左クリックで取り消し線
-        li.addEventListener('click', function() {
+        li.addEventListener('click', function () {
             this.classList.toggle('text-decoration-line-through');
             saveData();
         });
 
         // 右クリックで削除
-        li.addEventListener('contextmenu', function(e) {
+        li.addEventListener('contextmenu', function (e) {
             e.preventDefault();
             this.remove();
             saveData();
@@ -73,13 +73,16 @@ function saveData() {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-/*
-const texts = ['abc'];
+let lines = ['Paiza'];
 
-if(texts.length <= 100 && texts.length > 1){
-texts.forEach(function (text) {
-    console.log(text);
-})
-}
+let len = lines[0].length + 2;
 
-console.log(texts);*/
+const num = () => {
+    for (let i = 0; i < len; i++) {
+        process.stdout.write('+');
+    }
+};
+
+console.log(num());
+console.log('+' + lines[0] + '+');
+console.log(num());
