@@ -132,9 +132,25 @@ function dateSelect() {
     select.addEventListener("click", (p) => {
         let textDate = new Date(year, month - 1, p.target.textContent);
         textDate = textDate.getDay();
-        console.log(weeks[textDate]);
         $dateSelect.value += `${month}/${p.target.textContent} (${weeks[textDate]})\n`;
     });
   });
 }
 dateSelect();
+
+
+function set() {
+  let value = $dateSelect.value;
+  localStorage.setItem('request',value);
+}
+
+
+
+
+
+// 送信ボタンを押したらローカルストレージに保存
+$doc.querySelector('#creatBtn').addEventListener('click', () => {
+  
+  console.log($dateSelect.value);
+  set();
+})
