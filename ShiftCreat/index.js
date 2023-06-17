@@ -126,6 +126,20 @@ calendar();
 next();
 prev();
 
+// 日付選択したら下に表示。休暇の時間帯選んでもらう。
+let $shiftSelect = $doc.querySelector('#shiftSelect');
+let shiftList = '';
+
+function shift (shiftReq) {
+  const btnAllDay = '<td><button id="btn1 btnTimeZone" class="selector_btn">終日</button></td>';
+  const btnMorning = '<td><button id="btn2 btnTimeZone" class="selector_btn">午前</button></td>';
+  const btnAfternoon = '<td><button id="btn3 btnTimeZone" class="selector_btn">午後</button></td>';
+
+  shiftList += `<tr><th>${shiftReq}</th>${btnAllDay}${btnMorning}${btnAfternoon}</tr>`
+
+  $shiftSelect.innerHTML = shiftList;
+}
+
 // 選択した日付をテキストエリアに入力
 function dateSelect() {
   $dateText.forEach(function (select) {
@@ -133,11 +147,13 @@ function dateSelect() {
         let textDate = new Date(year, month - 1, p.target.textContent);
         textDate = textDate.getDay();
         $dateSelect.value += `${month}/${p.target.textContent} (${weeks[textDate]})\n`;
+
+        let shiftReq = `${month}/${p.target.textContent} (${weeks[textDate]})\n`;
+        shift(shiftReq);
     });
   });
 }
 dateSelect();
-
 
 function set() {
   let value = $dateSelect.value;
@@ -145,12 +161,12 @@ function set() {
 }
 
 
-
-
-
 // 送信ボタンを押したらローカルストレージに保存
-$doc.querySelector('#creatBtn').addEventListener('click', () => {
+$doc.querySelector('#createBtn').addEventListener('click', () => {
   
   console.log($dateSelect.value);
   set();
 })
+
+
+

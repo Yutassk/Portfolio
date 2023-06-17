@@ -10,9 +10,6 @@ body {
     margin: 0 auto;
 }
 
-main {
-
-}
 
 /* Calendar
 ----------------------------------------- */
@@ -186,8 +183,4 @@ a.btn--circle:hover i {
 .select_title {
     text-align: center;
 }
-
-select_memo {}
-select_example {}
-
 
