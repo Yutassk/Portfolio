@@ -140,6 +140,13 @@ function shift (shiftReq) {
   $shiftSelect.innerHTML = shiftList;
 }
 
+const selectTime = $doc.querySelector('#btnTimeZone').forEach(function (button) {
+  this.addEventListener('click', () => {
+    console.log(hello);
+  })
+})
+
+
 // 選択した日付をテキストエリアに入力
 function dateSelect() {
   $dateText.forEach(function (select) {
