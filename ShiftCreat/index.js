@@ -26,7 +26,7 @@ const $dateSelect = $doc.querySelector("#dateSelect"); //日付候補入力エ�
 // 曜日表示
 for (let i = 0; i < weeks.length; i++) {
   $week[i].textContent = weeks[i];
-} 
+}
 
 // カレンダーの日付生成
 function calendar() {
@@ -46,7 +46,7 @@ function calendar() {
   }
 
   if (thisMonth == month && thisYear == year) {
-    $dateText.forEach(function (value) {
+    $dateText.forEach((value) => {
       if (value.textContent == today) {
         $dateText[today + startDay - 1].classList.add("today");
       }
@@ -144,46 +144,60 @@ shiftList += "</td>";
 shiftList += "</tr>";
 
   $shiftSelect.innerHTML = shiftList;
-  timeZone(shiftReq);
 }
 
-const timeZone = (shiftReq) => {
-  $doc.querySelectorAll(`input[type='radio']`).forEach(function (active) {
-    active.addEventListener("click", (p) => {
-      console.log(p.target.name);
-      let key = shiftReq;
-      let value = p.target.value;
-  window.sessionStorage.setItem(key,value)
-
-  })
-})
-}
 // 選択した日付をテキストエリアに入力
 function dateSelect() {
-  $dateText.forEach(function (select) {
+  $dateText.forEach((select) => {
     select.addEventListener("click", (p) => {
       let textDate = new Date(year, month - 1, p.target.textContent);
       textDate = textDate.getDay();
       let shiftReq = `${month}/${p.target.textContent} (${weeks[textDate]})`;
       p.target.classList.add('gray');
       shift(shiftReq);
+      set(shiftReq);
       g++;
+
+      // ラジオボタンにchecked属性つける
+      /*
+      // 変わったのは取得できるけどどうしたら？
+let $radio = $doc.querySelectorAll(`input[type='radio']`);
+for(let elm of $radio) {
+  elm.addEventListener('change', function() {
+    if(this.checked) {
+      console.log('Kawattayo');
+    }
+  })
+}
+
+let $radio = $doc.querySelectorAll('input[name=kouho1]');
+for(let elm of $radio) {
+  elm.chedked = false;
+}
+*/
+
+
     });
   });
 }
 dateSelect();
 
 
-// ローカルストレージに保存する関数
-function set() {
-  let value = $dateSelect.value;
-  localStorage.setItem('request',value);
-}
 
-// 送信ボタンを押したらローカルストレージに保存
-$doc.querySelector('#createBtn').addEventListener('click', () => {
-  set();
-})
+
+
+// ローカルストレージに保存する関数
+function set(shiftReq) {
+  $doc.querySelector('#createBtn').addEventListener('click', () => {
+    $doc.querySelectorAll('#shiftSelect tr').forEach((rad) => {
+      console.log($doc.querySelector(`input[name='kouho${g}:checked']`))
+        let key = shiftReq;
+        let value = 'ok';
+        localStorage.setItem(key,value);
+    })
+  })
+  }
+
 
 
 
