@@ -131,47 +131,73 @@ let $shiftSelect = $doc.querySelector('#shiftSelect');
 let shiftList = '';
 
 function shift (shiftReq) {
-  const btnAllDay = '<td><button id="btn1 btnTimeZone" class="selector_btn">終日</button></td>';
-  const btnMorning = '<td><button id="btn2 btnTimeZone" class="selector_btn">午前</button></td>';
-  const btnAfternoon = '<td><button id="btn3 btnTimeZone" class="selector_btn">午後</button></td>';
 
-  shiftList += `<tr><th>${shiftReq}</th>${btnAllDay}${btnMorning}${btnAfternoon}</tr>`
+  const btnAllDay = '<button id="btn1 btnTimeZone" class="selector_btn" type="button">終日</button>';
+  const btnMorning = '<button id="btn2 btnTimeZone" class="selector_btn" type="button">午前</button>';
+  const btnAfternoon = '<button id="btn3 btnTimeZone" class="selector_btn" type="button">午後</button>';
+  const hiddenNum = `<input name="kouho1" type="hidden" id="timeReq" class="hide"></input>`; //日付とともにどのボタンが押されたのか番号を渡す
+
+  shiftList += `<tr><th>${shiftReq}</th><td>${btnAllDay}${btnMorning}${btnAfternoon}</td></tr>`
+
+/*
+shiftList += "<tr>";
+shiftList += "<td>";
+shiftList += '<input type="radio" id="btn1" role="button">終日';
+shiftList += '<input type="radio" id="btn2" role="button">午前';
+shiftList += '<input type="radio" id="btn3" role="button">午後';
+
+shiftList += "</td>";
+shiftList += "</tr>";
+*/
 
   $shiftSelect.innerHTML = shiftList;
+  timeZone();
 }
 
-const selectTime = $doc.querySelector('#btnTimeZone').forEach(function (button) {
-  this.addEventListener('click', () => {
-    console.log(hello);
+const timeZone = () => {
+  $doc.querySelectorAll('#btnTimeZone').forEach(function (active) {
+  active.addEventListener("click", (p) => {
+    console.log('hello');
+    console.log(p);
   })
 })
+}
+// ボタンアクティブにする処理
+
+
+
+// 時間帯を選択するボタンを押したら日付と時間帯きまる
+
+
+
+
+
+
 
 
 // 選択した日付をテキストエリアに入力
 function dateSelect() {
   $dateText.forEach(function (select) {
     select.addEventListener("click", (p) => {
-        let textDate = new Date(year, month - 1, p.target.textContent);
-        textDate = textDate.getDay();
-        $dateSelect.value += `${month}/${p.target.textContent} (${weeks[textDate]})\n`;
-
-        let shiftReq = `${month}/${p.target.textContent} (${weeks[textDate]})\n`;
-        shift(shiftReq);
+      let textDate = new Date(year, month - 1, p.target.textContent);
+      textDate = textDate.getDay();
+      $dateSelect.value += `${month}/${p.target.textContent} (${weeks[textDate]})\n`;
+      
+      let shiftReq = `${month}/${p.target.textContent} (${weeks[textDate]})\n`;
+      shift(shiftReq);
     });
   });
 }
 dateSelect();
 
+// ローカルストレージに保存する関数
 function set() {
   let value = $dateSelect.value;
   localStorage.setItem('request',value);
 }
 
-
 // 送信ボタンを押したらローカルストレージに保存
 $doc.querySelector('#createBtn').addEventListener('click', () => {
-  
-  console.log($dateSelect.value);
   set();
 })
 
