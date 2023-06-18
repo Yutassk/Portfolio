@@ -174,3 +174,13 @@ a.btn--circle:hover i {
 .selector_btn:active {
     background-color: red;
 }
+
+/* シフト詳細入力エリア */
+.shift_detail input[type="image"] {
+    width: 100px;
+    height: 10ß0px;
+}
+
+.shift_detail input[type="image"]:active {
+    background-color: red;
+}
