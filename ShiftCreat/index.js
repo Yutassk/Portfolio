@@ -21,7 +21,13 @@ const thisMonth = date.getMonth() + 1; //today削除用。月が変わっても�
 const thisYear = date.getFullYear(); //today削除用。月が変わっても当月を示す。
 
 const $dateText = $doc.querySelectorAll("#dateText"); //日付入力のtd
-const $dateSelect = $doc.querySelector("#dateSelect"); //日付候補入力エリア
+
+const $shiftSelect = $doc.querySelector("#shiftSelect");
+let shiftList = "";
+let g = 1; //ボタンのname用
+
+let key = []; //localstrage保存用
+let value = [];
 
 // 曜日表示
 for (let i = 0; i < weeks.length; i++) {
@@ -55,7 +61,7 @@ function calendar() {
           $dateText[i + startDay - 1].classList.add("gray");
         }
       }
-    })
+    });
   } else {
     $dateText.forEach((value) => {
       if (value.classList.contains("today") == true) {
@@ -98,7 +104,8 @@ const next = () => {
 const prev = () => {
   $prevBtn.addEventListener("click", (e) => {
     // 当月になったらprevボタン隠す
-    if (thisMonth >= month - 1 && thisYear >= year) { //クリック時点で判断されるためmonth-1
+    if (thisMonth >= month - 1 && thisYear >= year) {
+      //クリック時点で判断されるためmonth-1
       $doc.querySelector("#prevBtn").classList.add("hide");
     }
 
@@ -127,21 +134,16 @@ next();
 prev();
 
 // 日付選択したら下に表示。休暇の時間帯選んでもらう。
-let $shiftSelect = $doc.querySelector('#shiftSelect');
-let shiftList = '';
-let g = 1; //ボタンのname用
+function shift(shiftReq) {
+  shiftList += "<tr>";
+  shiftList += "<td>";
+  shiftList += shiftReq;
+  shiftList += `<input type="radio" name="kouho${[g]}" value="終日" checked = true>終日`;
+  shiftList += `<input type="radio" name="kouho${[g]}" value="午前">午前`;
+  shiftList += `<input type="radio" name="kouho${[g]}" value="午後">午後`;
 
-function shift (shiftReq) {
-
-shiftList += "<tr>";
-shiftList += "<td>";
-shiftList += shiftReq;
-shiftList += `<input type="radio" name="kouho${[g]}" value="1">終日`;
-shiftList += `<input type="radio" name="kouho${[g]}" value="2">午前`;
-shiftList += `<input type="radio" name="kouho${[g]}" value="3">午後`;
-
-shiftList += "</td>";
-shiftList += "</tr>";
+  shiftList += "</td>";
+  shiftList += "</tr>";
 
   $shiftSelect.innerHTML = shiftList;
 }
@@ -153,51 +155,35 @@ function dateSelect() {
       let textDate = new Date(year, month - 1, p.target.textContent);
       textDate = textDate.getDay();
       let shiftReq = `${month}/${p.target.textContent} (${weeks[textDate]})`;
-      p.target.classList.add('gray');
+      p.target.classList.add("gray");
       shift(shiftReq);
-      set(shiftReq);
+      key.push(shiftReq);
       g++;
-
-      // ラジオボタンにchecked属性つける
-      /*
-      // 変わったのは取得できるけどどうしたら？
-let $radio = $doc.querySelectorAll(`input[type='radio']`);
-for(let elm of $radio) {
-  elm.addEventListener('change', function() {
-    if(this.checked) {
-      console.log('Kawattayo');
-    }
-  })
-}
-
-let $radio = $doc.querySelectorAll('input[name=kouho1]');
-for(let elm of $radio) {
-  elm.chedked = false;
-}
-*/
-
-
     });
   });
 }
 dateSelect();
 
+// ラジオボタンの選択されているvalueを取得
+function getRadioValue() {
+  $doc.querySelector("#createBtn").addEventListener("click", () => {
+    let row = $shiftSelect.rows.length;
+    for (let nc = 1; nc < row + 1; nc++) {
+      $doc.querySelectorAll(`input[name=kouho${nc}]`).forEach((elm) => {
+        if (elm.checked) {
+          value.push(elm.value);
+          save();
+          return;
+        }
+      });
+    }
+  });
+}
+getRadioValue();
 
-
-
-
-// ローカルストレージに保存する関数
-function set(shiftReq) {
-  $doc.querySelector('#createBtn').addEventListener('click', () => {
-    $doc.querySelectorAll('#shiftSelect tr').forEach((rad) => {
-      console.log($doc.querySelector(`input[name='kouho${g}:checked']`))
-        let key = shiftReq;
-        let value = 'ok';
-        localStorage.setItem(key,value);
-    })
-  })
+// ローカルストレージ保存
+function save() {
+  for (let s = 0; s < key.length; s++) {
+    localStorage.setItem(key[s], value[s]);
   }
-
-
-
-
+}
