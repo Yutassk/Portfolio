@@ -26,7 +26,7 @@ const $shiftSelect = $doc.querySelector("#shiftSelect");
 let shiftList = "";
 let g = 1; //ボタンのname用
 
-let key = []; //localstrage保存用
+let key = []; //localStorage保存用
 let value = [];
 
 // 曜日表示
@@ -173,7 +173,7 @@ function getRadioValue() {
         if (elm.checked) {
           value.push(elm.value);
           save();
-          return;
+          // return;
         }
       });
     }
