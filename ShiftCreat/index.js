@@ -133,12 +133,22 @@ calendar();
 next();
 prev();
 
+// シフト入力ボタンを押したら入力項目表示
+const $inputShiftBtn = $doc.querySelector("#inputShiftBtn");
+$doc.querySelector("#hidden").style.display = "none";
+$inputShiftBtn.addEventListener("click", () => {
+  $inputShiftBtn.style.display = "none";
+  $doc.querySelector("#hidden").style.display = "block";
+});
+
 // 日付選択したら下に表示。休暇の時間帯選んでもらう。
 function shift(shiftReq) {
   shiftList += "<tr>";
   shiftList += "<td>";
   shiftList += shiftReq;
-  shiftList += `<input type="radio" name="kouho${[g]}" value="終日" checked = true>終日`;
+  shiftList += `<input type="radio" name="kouho${[
+    g,
+  ]}" value="終日" checked = true>終日`;
   shiftList += `<input type="radio" name="kouho${[g]}" value="午前">午前`;
   shiftList += `<input type="radio" name="kouho${[g]}" value="午後">午後`;
 
@@ -166,14 +176,14 @@ dateSelect();
 
 // ラジオボタンの選択されているvalueを取得
 function getRadioValue() {
-  $doc.querySelector("#createBtn").addEventListener("click", () => {
+  $doc.querySelector("#submissionBtn").addEventListener("click", () => {
     let row = $shiftSelect.rows.length;
     for (let nc = 1; nc < row + 1; nc++) {
       $doc.querySelectorAll(`input[name=kouho${nc}]`).forEach((elm) => {
         if (elm.checked) {
           value.push(elm.value);
           save();
-          // return;
+          sessionSave();
         }
       });
     }
@@ -187,3 +197,5 @@ function save() {
     localStorage.setItem(key[s], value[s]);
   }
 }
+
+// const sessionSave
