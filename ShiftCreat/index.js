@@ -129,10 +129,6 @@ const prev = () => {
   });
 };
 
-calendar();
-next();
-prev();
-
 // シフト入力ボタンを押したら入力項目表示
 const $inputShiftBtn = $doc.querySelector("#inputShiftBtn");
 $doc.querySelector("#hidden").style.display = "none";
@@ -172,24 +168,21 @@ function dateSelect() {
     });
   });
 }
-dateSelect();
 
 // ラジオボタンの選択されているvalueを取得
 function getRadioValue() {
   $doc.querySelector("#submissionBtn").addEventListener("click", () => {
-    let row = $shiftSelect.rows.length;
+    let row = $shiftSelect.rows.length; //候補日程の行数取得
     for (let nc = 1; nc < row + 1; nc++) {
       $doc.querySelectorAll(`input[name=kouho${nc}]`).forEach((elm) => {
         if (elm.checked) {
           value.push(elm.value);
           save();
-          sessionSave();
         }
       });
     }
   });
 }
-getRadioValue();
 
 // ローカルストレージ保存
 function save() {
@@ -198,4 +191,21 @@ function save() {
   }
 }
 
-// const sessionSave
+calendar();
+next();
+prev();
+
+dateSelect();
+
+getRadioValue();
+
+// URL発行
+const $shiftUrlBtn = $doc.querySelector("#shiftUrlBtn");
+function generateURL() {
+  $shiftUrlBtn.addEventListener("click", () => {
+    const uniqueId = generateUniqueId();
+    const url = `https://example.com/${uniqueId}`;
+    window.location.href = url;
+    console.log(url);
+  });
+}
