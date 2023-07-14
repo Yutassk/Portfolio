@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
@@ -5,14 +6,14 @@ export const Main = () => {
   return (
     <div>
       <main>
-        <div className="bg-blue-500 h-96 relative mb-20">
+        <div className="h-96 relative mb-20">
           <Image src="/green.jpg" alt="" fill style={{ objectFit: "cover" }} />
         </div>
         <section className=" display_size">
           <h2 className="text-center">仕事への向き合い方</h2>
 
-          <div className="flex justify-around">
-            <div className="flex flex-col border-gray-400 border-solid border-2 mx-2 p-2">
+          <div className="">
+            <div className="">
               <h3>生産性向上</h3>
               <p></p>
               <p>
@@ -23,9 +24,8 @@ export const Main = () => {
                 nulla quidem quia.
               </p>
             </div>
-            <div className="flex flex-col border-gray-400 border-solid border-2 mx-2 p-2">
+            <div className="">
               <h3>チームプレー</h3>
-              <p></p>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quisquam numquam quibusdam incidunt voluptatibus iste rerum accusantium sed natus aperiam ut totam necessitatibus
                 consectetur, quaerat ad pariatur corporis perferendis possimus placeat magnam repellat veniam quo? Vel vero autem dolorum deserunt. Nemo, animi, quia hic unde soluta assumenda
@@ -34,9 +34,8 @@ export const Main = () => {
                 fugiat neque aut?
               </p>
             </div>
-            <div className="flex flex-col border-gray-400 border-solid border-2 mx-2 p-2">
+            <div className="">
               <h3>怒らない</h3>
-              <p></p>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta unde corrupti aliquam saepe quos provident ut magnam laudantium, ab impedit repudiandae itaque, possimus officia
                 aspernatur. Reprehenderit ipsam saepe quidem facilis dolore adipisci dolorem labore fuga sed! Asperiores aliquid dolorum molestias adipisci itaque ipsa sed, sint voluptas nesciunt modi
@@ -47,7 +46,7 @@ export const Main = () => {
             </div>
           </div>
         </section>
-        <section className=" display_size">
+        <section className="">
           <div>
             <h2>スキル</h2>
             <ul>
