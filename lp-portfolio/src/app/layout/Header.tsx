@@ -15,8 +15,8 @@ export const Header = () => {
               <h1 className="text-3xl m-6">YutaSasaki</h1>
             </Link>
           </div>
-
           <Nav />
+
           <ul className="flex justify-center">
             <li className="">
               <a href="/">

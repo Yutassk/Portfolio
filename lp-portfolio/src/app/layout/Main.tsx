@@ -6,16 +6,15 @@ export const Main = () => {
   return (
     <div>
       <main>
-        <div className="h-96 relative mb-20">
+        <div className="h-96 relative mb-5">
           <Image src="/green.jpg" alt="" fill style={{ objectFit: "cover" }} />
         </div>
-        <section className=" display_size">
+        <section className="display_size">
           <h2 className="text-center">仕事への向き合い方</h2>
 
           <div className="">
             <div className="">
               <h3>生産性向上</h3>
-              <p></p>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias earum eaque similique ut a nihil excepturi at laborum necessitatibus, libero illum, dolorem aliquid assumenda vel
                 nam. Necessitatibus consectetur quos quo adipisci cupiditate laboriosam asperiores corrupti? Accusantium dolore voluptatem maxime aspernatur, repellendus a voluptate consequatur
