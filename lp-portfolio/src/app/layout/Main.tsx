@@ -1,65 +1,37 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { Unsplash } from "../components/Unsplash";
+import { Skills } from "../components/Skills";
 
 export const Main = () => {
   return (
     <div>
       <main>
-        <div className="h-96 relative /">
-          {/* <Image src="/green.jpg" alt="" fill style={{ objectFit: "cover" }} /> */}
-          <Unsplash />
-        </div>
+        {/* <Image src="/green.jpg" alt="" fill style={{ objectFit: "cover" }} /> */}
+        <Unsplash />
         <section className="">
-          <h2 className="text-center text-3xl text-white bg-gray-500 py-2">Work</h2>
+          <h2 className="text-center text-3xl text-white bg-gray-500 py-2">Profile</h2>
 
           <div className="px-5 m-auto">
-            <div className="mb-5">
-              <h3 className="border-b-2 text-center text-lg">生産性向上</h3>
-              <p>システムの見直しや業務内容の見直しを定期的に行うことで無駄な作業を減らすことが好き。</p>
-            </div>
-            <div className="">
-              <h3>チームプレー</h3>
-              <p>他職種と交流を深めることで知見を深めたり、提供できる価値を高めることが可能となる。</p>
-            </div>
-            <div className="">
-              <h3>怒らない</h3>
-              <p>
-                部下への指導時に怒ってしまうと、恐縮してしまい部下自身の自走できるチャンスを奪うことになりかねない。あくまでも部下自身に考えさせることで自走できる力を伸ばすことに重きを置いた指導を心がけている。
+            <div className="mb-5 flex justify-around">
+              <div className="w-1/3 relative">
+                <Image src={"/研究する人.png"} alt="" fill style={{ objectFit: "contain" }} />
+              </div>
+
+              <p className="w-1/2">
+                はじめまして。平成2年生まれのゆうた(`<a href="/">@yutassk</a>`)と申します。社会人歴10年目です。
+                <br />
+                職歴としては大学を卒業してから放射線技師として総合病院に勤務しています。全検査（MRI、CT、カテーテル検査、バリウム検査などの撮影業務）を担当していたのでエンジニアで言うところの「フルスタック」のような勤務状況でした。
+                <br />
+                小学4年生の頃にパソコンにハマり、ホームページ作成やプログラミング（C+、Javaなど）、ゲームのバイナリデータをいじったりしていました。
+                <br />
+                アフィリエイトを行う中でスクレイピングする必要に迫られコーディングをしたり、業務で使用するマクロを組んだりなど。
               </p>
             </div>
           </div>
         </section>
-        <section className="">
-          <div>
-            <h2>スキル</h2>
-            <ul>
-              <li>
-                <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="" />
-                HTML,CSS
-              </li>
-              <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" />
-              <li>Javascript</li>
-              <li>
-                <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" />
-                React
-              </li>
-              <li>
-                <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="" />
-                TailwindCSS
-              </li>
-              <li>
-                <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" />
-                Typescript
-              </li>
-              <li>
-                <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" />
-                Next.js
-              </li>
-            </ul>
-          </div>
-        </section>
+        <Skills />
 
         <section className=" display_size">
           <div>

@@ -18,7 +18,7 @@ export const Unsplash = () => {
   }, []);
 
   return (
-    <div>
+    <div className="h-96 relative">
       {photo && <Result photo={photo} />}
       <SelectButton getPhotoData={getPhotoData} />
     </div>

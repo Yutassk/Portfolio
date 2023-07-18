@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .display_size {
-    @apply max-w-5xl m-auto;
-  }
-}
-
 body {
   width: 100%;
   color: #333;

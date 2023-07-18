@@ -1,9 +1,15 @@
+import Link from "next/link";
 import React from "react";
 
 export const Footer = () => {
   return (
     <div>
-      <footer className="bg-blue-500 max-w-3xl m-auto">Footer</footer>
+      <footer className="flex justify-between bg-gray-700 text-white max-w-3xl px-20 py-6">
+        <Link href={"/"}>Profile</Link>
+        <Link href={"/"}>Skill</Link>
+        <Link href={"/"}>Hobby</Link>
+        <Link href={"/"}>Future</Link>
+      </footer>
     </div>
   );
 };
