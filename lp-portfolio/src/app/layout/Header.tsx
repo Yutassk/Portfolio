@@ -12,7 +12,7 @@ export const Header = () => {
         <div className="">
           <div>
             <Link href="/">
-              <h1 className="text-3xl m-6">YutaSasaki</h1>
+              <h1 className="text-3xl m-6">ネマーレ</h1>
             </Link>
           </div>
           <Nav />

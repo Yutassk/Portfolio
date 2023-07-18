@@ -1,46 +1,32 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { Unsplash } from "../components/Unsplash";
 
 export const Main = () => {
   return (
     <div>
       <main>
-        <div className="h-96 relative mb-5">
-          <Image src="/green.jpg" alt="" fill style={{ objectFit: "cover" }} />
+        <div className="h-96 relative /">
+          {/* <Image src="/green.jpg" alt="" fill style={{ objectFit: "cover" }} /> */}
+          <Unsplash />
         </div>
-        <section className="display_size">
-          <h2 className="text-center">仕事への向き合い方</h2>
+        <section className="">
+          <h2 className="text-center text-3xl text-white bg-gray-500 py-2">Work</h2>
 
-          <div className="">
-            <div className="">
-              <h3>生産性向上</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias earum eaque similique ut a nihil excepturi at laborum necessitatibus, libero illum, dolorem aliquid assumenda vel
-                nam. Necessitatibus consectetur quos quo adipisci cupiditate laboriosam asperiores corrupti? Accusantium dolore voluptatem maxime aspernatur, repellendus a voluptate consequatur
-                mollitia labore. Accusantium consequatur voluptate totam, eum cumque blanditiis voluptates tenetur tempore repellat odit ab et nam, enim velit fugiat numquam expedita non ea pariatur
-                quidem eligendi reiciendis! Magni veniam totam inventore? A, quos animi dolores, praesentium soluta dolor harum minus ea nobis ut id sint odit eius maxime, et consequatur! Vero ipsam
-                nulla quidem quia.
-              </p>
+          <div className="px-5 m-auto">
+            <div className="mb-5">
+              <h3 className="border-b-2 text-center text-lg">生産性向上</h3>
+              <p>システムの見直しや業務内容の見直しを定期的に行うことで無駄な作業を減らすことが好き。</p>
             </div>
             <div className="">
               <h3>チームプレー</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quisquam numquam quibusdam incidunt voluptatibus iste rerum accusantium sed natus aperiam ut totam necessitatibus
-                consectetur, quaerat ad pariatur corporis perferendis possimus placeat magnam repellat veniam quo? Vel vero autem dolorum deserunt. Nemo, animi, quia hic unde soluta assumenda
-                voluptas, porro totam perferendis odit molestiae. Eius ut facilis veniam quos error corrupti harum, minus culpa, eos ratione molestiae officiis numquam vero atque nulla maiores tenetur
-                autem ducimus nihil itaque soluta ipsa molestias, veritatis libero! Ad alias, sequi labore molestiae nobis aliquid similique excepturi nostrum doloribus, animi quibusdam! Quidem iste
-                fugiat neque aut?
-              </p>
+              <p>他職種と交流を深めることで知見を深めたり、提供できる価値を高めることが可能となる。</p>
             </div>
             <div className="">
               <h3>怒らない</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta unde corrupti aliquam saepe quos provident ut magnam laudantium, ab impedit repudiandae itaque, possimus officia
-                aspernatur. Reprehenderit ipsam saepe quidem facilis dolore adipisci dolorem labore fuga sed! Asperiores aliquid dolorum molestias adipisci itaque ipsa sed, sint voluptas nesciunt modi
-                quas quod ab repudiandae earum ipsum quia nisi nam doloremque temporibus! Nulla, fuga! Suscipit veritatis quibusdam obcaecati, expedita numquam doloremque aperiam possimus tempore
-                sapiente non. Dolorum a quis in saepe eius autem laborum omnis incidunt consequuntur eum eaque perferendis iure esse ducimus, sed voluptatem odit ullam numquam? Quos odio ullam dolorum
-                fuga.
+                部下への指導時に怒ってしまうと、恐縮してしまい部下自身の自走できるチャンスを奪うことになりかねない。あくまでも部下自身に考えさせることで自走できる力を伸ばすことに重きを置いた指導を心がけている。
               </p>
             </div>
           </div>
