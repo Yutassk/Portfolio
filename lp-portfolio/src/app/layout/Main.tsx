@@ -11,7 +11,7 @@ export const Main = () => {
         {/* <Image src="/green.jpg" alt="" fill style={{ objectFit: "cover" }} /> */}
         <Unsplash />
         <section className="">
-          <h2 className="text-center text-3xl text-white bg-gray-500 py-2">Profile</h2>
+          <h2 className="text-center text-3xl text-white  py-2">Profile</h2>
 
           <div className="px-5 m-auto">
             <div className="mb-5 flex justify-around">

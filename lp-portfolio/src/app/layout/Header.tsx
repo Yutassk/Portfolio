@@ -4,8 +4,12 @@ import Image from "next/image";
 import React from "react";
 import { Nav } from "../components/Nav";
 import Link from "next/link";
+import { Unsplash } from "../components/Unsplash";
+import { SelectButton } from "../components/SelectButton";
 
 export const Header = () => {
+  console.log(Unsplash);
+
   return (
     <div>
       <header className="mb-5">
@@ -28,6 +32,7 @@ export const Header = () => {
                 <Image width={40} height={40} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="" />
               </a>
             </li>
+            <li>{/* <SelectButton getPhotoData={Unsplash} /> */}</li>
           </ul>
         </div>
       </header>

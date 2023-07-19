@@ -1,6 +1,5 @@
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import React, { useState } from "react";
 
 export const Skills = () => {
@@ -10,46 +9,59 @@ export const Skills = () => {
     setAccordion(!accordion);
     console.log(accordion);
   };
+
+  const getAccordion = () => {
+    if (accordion) {
+      return "rotate-45";
+    }
+  };
+
   return (
     <div>
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center">
         <button onClick={accordionSkills} className="text-3xl mr-2">
-          <FontAwesomeIcon icon={faPlus} className="plusIcon" />
+          <FontAwesomeIcon icon={faPlus} className={`${getAccordion()} transition-all`} />
         </button>
         <h2 className="text-3xl">Skill</h2>
       </div>
       <ul className="hidden">
-        <li>
-          <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="" />
-          HTML,CSS
-        </li>
-        <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" />
-        <li>Javascript</li>
-        <li>
-          <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" />
-          React
+        <li className="">
+          <i className="devicon-html5-plain-wordmark text-8xl w-1/2"></i>
+          <div className="">
+            <h3 className="">HTML5</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+          </div>
         </li>
         <li>
-          <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="" />
-          TailwindCSS
+          <i className="devicon-tailwindcss-plain colored text-8xl"></i>
+          <h3>TailwindCSS</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
         </li>
         <li>
-          <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" />
-          Typescript
+          <i className="devicon-css3-plain-wordmark colored text-8xl"></i>
+          <h3>CSS</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
         </li>
         <li>
-          <Image width={100} height={100} src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" />
-          Next.js
+          <i className="devicon-javascript-plain-wordmark colored text-8xl"></i>
+          <h3>JavaScript</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+        </li>
+        <li>
+          <i className="devicon-react-plain-wordmark colored text-8xl"></i>
+          <h3>React</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+        </li>
+        <li>
+          <i className="devicon-nextjs-plain colored text-8xl"></i>
+          <h3>Next.JS</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
         </li>
       </ul>
       <style jsx>
         {`
           .hidden {
             display: ${accordion ? "inline" : "none"};
-          }
-
-          .plusIcon {
-            color: red;
           }
         `}
       </style>

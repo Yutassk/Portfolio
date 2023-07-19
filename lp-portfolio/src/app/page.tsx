@@ -4,7 +4,7 @@ import { Footer } from "./layout/Footer";
 
 export default function Home() {
   return (
-    <div className="container m-auto">
+    <div className="container m-auto bg-hero-pattern">
       <Header />
       <Main />
       <Footer />
