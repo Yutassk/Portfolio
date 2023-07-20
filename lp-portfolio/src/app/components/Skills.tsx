@@ -1,5 +1,6 @@
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import React, { useState } from "react";
 
 export const Skills = () => {
@@ -7,7 +8,6 @@ export const Skills = () => {
 
   const accordionSkills = () => {
     setAccordion(!accordion);
-    console.log(accordion);
   };
 
   const getAccordion = () => {
@@ -25,35 +25,38 @@ export const Skills = () => {
         <h2 className="text-3xl">Skill</h2>
       </div>
       <ul className="hidden">
-        <li className="">
-          <i className="devicon-html5-plain-wordmark text-8xl w-1/2"></i>
+        <li className="rounded-lg shadow hover:shadow-lg m-4 p-4 bg-cyan-200 bg-opacity-20">
+          <div className="flex items-center justify-center border-b border-white pb-2">
+            <Image className="" src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"} alt="" width={50} height={50} />
+            <h3 className="ml-2">HTML5</h3>
+          </div>
           <div className="">
-            <h3 className="">HTML5</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
           </div>
         </li>
+        <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"} alt="" width={50} height={50} />
         <li>
-          <i className="devicon-tailwindcss-plain colored text-8xl"></i>
           <h3>TailwindCSS</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
         </li>
+        <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"} alt="" width={50} height={50} />
         <li>
-          <i className="devicon-css3-plain-wordmark colored text-8xl"></i>
           <h3>CSS</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
         </li>
+        <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"} alt="" width={50} height={50} />
         <li>
-          <i className="devicon-javascript-plain-wordmark colored text-8xl"></i>
           <h3>JavaScript</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
         </li>
+        <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"} alt="" width={50} height={50} />
         <li>
-          <i className="devicon-react-plain-wordmark colored text-8xl"></i>
           <h3>React</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
         </li>
         <li>
-          <i className="devicon-nextjs-plain colored text-8xl"></i>
+          <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"} alt="" width={50} height={50} />
+
           <h3>Next.JS</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
         </li>

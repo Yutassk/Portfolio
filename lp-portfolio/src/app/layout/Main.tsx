@@ -33,7 +33,7 @@ export const Main = () => {
         </section>
         <Skills />
 
-        <section className=" display_size">
+        <section>
           <div>
             <h2>趣味</h2>
             <ul>
