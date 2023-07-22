@@ -25,46 +25,66 @@ export const Skills = () => {
         <h2 className="text-3xl">Skill</h2>
       </div>
       <ul className="hidden">
-        <li className="rounded-lg shadow hover:shadow-lg m-4 p-4 bg-cyan-200 bg-opacity-20">
-          <div className="flex items-center justify-center border-b border-white pb-2">
+        <li className="card">
+          <div className="card_header">
+            <h3 className="card_title">HTML5</h3>
             <Image className="" src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"} alt="" width={50} height={50} />
-            <h3 className="ml-2">HTML5</h3>
           </div>
-          <div className="">
+          <div>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
           </div>
         </li>
-        <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"} alt="" width={50} height={50} />
-        <li>
-          <h3>TailwindCSS</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+        <li className="card">
+          <div className="card_header">
+            <h3 className="card_title">TailwindCSS</h3>
+            <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"} alt="" width={50} height={50} />
+          </div>
+          <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+          </div>
         </li>
-        <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"} alt="" width={50} height={50} />
-        <li>
-          <h3>CSS</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+        <li className="card">
+          <div className="card_header">
+            <h3 className="card_title">JavaScript</h3>
+            <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"} alt="" width={50} height={50} />
+          </div>
+          <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+          </div>
         </li>
-        <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"} alt="" width={50} height={50} />
-        <li>
-          <h3>JavaScript</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+        <li className="card">
+          <div className="card_header">
+            <h3 className="card_title">CSS</h3>
+            <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"} alt="" width={50} height={50} />
+          </div>
+          <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+          </div>
         </li>
-        <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"} alt="" width={50} height={50} />
-        <li>
-          <h3>React</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+        <li className="card">
+          <div className="card_header">
+            <h3 className="card_title">React</h3>
+            <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"} alt="" width={50} height={50} />
+          </div>
+          <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+          </div>
         </li>
-        <li>
-          <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"} alt="" width={50} height={50} />
-
-          <h3>Next.JS</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+        <li className="card">
+          <div className="card_header">
+            <h3 className="card_title">Next.js</h3>
+            <Image src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"} alt="" width={50} height={50} />
+          </div>
+          <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+          </div>
         </li>
       </ul>
       <style jsx>
         {`
           .hidden {
             display: ${accordion ? "inline" : "none"};
+            transition: ;
           }
         `}
       </style>

@@ -6,4 +6,19 @@ body {
   width: 100%;
   color: #fff;
   line-height: 1.7;
+  background-color: black;
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg  shadow hover:shadow-lg m-4 p-4 bg-white bg-opacity-30;
+  }
+}
+
+.card_header {
+  @apply flex flex-row-reverse items-center justify-center border-b border-white pb-2;
+}
+
+.card_title {
+  @apply ml-2 text-2xl;
 }
