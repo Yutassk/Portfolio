@@ -18,11 +18,13 @@ export const Skills = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mb-4">
         <button onClick={accordionSkills} className="text-3xl mr-2">
           <FontAwesomeIcon icon={faPlus} className={`${getAccordion()} transition-all`} />
         </button>
-        <h2 className="text-3xl">Skill</h2>
+        <h2 className="text-3xl" id="Skills">
+          Skill
+        </h2>
       </div>
       <ul className="hidden">
         <li className="card">
@@ -31,7 +33,7 @@ export const Skills = () => {
             <Image className="" src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"} alt="" width={50} height={50} />
           </div>
           <div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, maiores? Quam quaerat molestias dolorem rerum dicta modi, neque a incidunt.</p>
+            <p>基本的なコーディングは可能です。</p>
           </div>
         </li>
         <li className="card">

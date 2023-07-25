@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import { Unsplash } from "../components/Unsplash";
-import { Skills } from "../components/Skills";
+import { Unsplash } from "../../components/Unsplash";
+import { Skills } from "../../components/Skills";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookOpenReader, faDumbbell, faGamepad } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,31 +13,28 @@ export const Main = () => {
         {/* <Image src="/green.jpg" alt="" fill style={{ objectFit: "cover" }} /> */}
         <Unsplash />
         <section className="">
-          <h2 className="text-center text-3xl text-white  py-2">Profile</h2>
-
           <div className="px-5 m-auto">
+            <div></div>
+            <h2 className="text-center text-3xl text-white  py-2">Profile</h2>
             <div className="mb-5 flex justify-around">
               <div className="w-1/3 relative">
                 <Image src={"/研究する人.png"} alt="" fill style={{ objectFit: "contain" }} />
               </div>
 
               <p className="w-1/2">
-                はじめまして。平成2年生まれのゆうた(`<a href="/">@yutassk</a>`)と申します。社会人歴10年目です。
-                <br />
-                職歴としては大学を卒業してから放射線技師として総合病院に勤務しています。全検査（MRI、CT、カテーテル検査、バリウム検査などの撮影業務）を担当していたのでエンジニアで言うところの「フルスタック」のような勤務状況でした。
-                <br />
-                小学4年生の頃にパソコンにハマり、ホームページ作成やプログラミング（C+、Javaなど）、ゲームのバイナリデータをいじったりしていました。
-                <br />
-                アフィリエイトを行う中でスクレイピングする必要に迫られコーディングをしたり、業務で使用するマクロを組んだりなど。
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio expedita placeat delectus reprehenderit voluptates error adipisci autem. Labore, cupiditate aperiam quas corporis saepe
+                veritatis illum, error ducimus vel aliquam accusamus dolore mollitia dolor quae sapiente! Odit eos vitae nisi tenetur maxime ab deleniti voluptatibus dolorem odio possimus beatae
+                temporibus, et numquam molestias. Odio aliquid similique repellat id autem eligendi iusto minima culpa dolore quod asperiores deserunt natus qui provident sed totam placeat maxime,
+                ratione suscipit hic nihil deleniti! Nulla vel explicabo aliquam voluptatum ex nostrum consequatur, voluptatibus tenetur eos nemo facilis fuga, inventore ratione minus corrupti iure,
+                impedit porro! Id.
               </p>
             </div>
           </div>
         </section>
         <Skills />
-
         <section>
           <div>
-            <h2 className="text-3xl text-center">趣味</h2>
+            <h2 className="text-3xl text-center mb-4">趣味</h2>
             <ul>
               <li className="card">
                 <div className="card_header">

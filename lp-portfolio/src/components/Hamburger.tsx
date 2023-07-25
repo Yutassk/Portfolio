@@ -23,7 +23,7 @@ export const Hamburger = ({ isOpen }: any) => {
             width: 2rem;
             height: 0.25rem;
             border-radius: 10px;
-            background-color: black;
+            background-color: white;
             transform-origin: 1px;
             transition: all 0.3s linear;
           }

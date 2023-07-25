@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Hamburger } from "./Hamburger";
+import { Link as Scroll } from "react-scroll";
 
 export const Nav = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState<boolean>(false);
@@ -14,10 +15,10 @@ export const Nav = () => {
       <nav className="navigation">
         <ul className="">
           <li className="">
-            <Link href="/">Profile</Link>
+            <Link href="/src/app/Profile.tsx">Profile</Link>
           </li>
           <li className="">
-            <Link href="/">Skill</Link>
+            <Link href="#Skills">Skill</Link>
           </li>
           <li className="">
             <Link href="/">Hobby</Link>
