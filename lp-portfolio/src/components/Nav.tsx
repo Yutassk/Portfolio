@@ -18,7 +18,7 @@ export const Nav = () => {
             <Link href="/src/app/Profile.tsx">Profile</Link>
           </li>
           <li className="">
-            <Link href="#Skills">Skill</Link>
+            <Link href="/Contact">Skill</Link>
           </li>
           <li className="">
             <Link href="/">Hobby</Link>

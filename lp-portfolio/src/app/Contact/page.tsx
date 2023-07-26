@@ -1,6 +1,7 @@
+import Link from "next/link";
 import React from "react";
 
-export const Contact = () => {
+const Contact = () => {
   const contactList: {
     title: string;
     address: string;
@@ -15,7 +16,10 @@ export const Contact = () => {
       <dl>
         <dt>Twitter</dt>
         <dd>ここにアカウント名</dd>
+        <Link href="/">button</Link>
       </dl>
     </div>
   );
 };
+
+export default Contact;

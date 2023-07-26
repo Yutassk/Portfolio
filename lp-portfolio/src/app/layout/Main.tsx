@@ -22,11 +22,13 @@ export const Main = () => {
               </div>
 
               <p className="w-1/2">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio expedita placeat delectus reprehenderit voluptates error adipisci autem. Labore, cupiditate aperiam quas corporis saepe
-                veritatis illum, error ducimus vel aliquam accusamus dolore mollitia dolor quae sapiente! Odit eos vitae nisi tenetur maxime ab deleniti voluptatibus dolorem odio possimus beatae
-                temporibus, et numquam molestias. Odio aliquid similique repellat id autem eligendi iusto minima culpa dolore quod asperiores deserunt natus qui provident sed totam placeat maxime,
-                ratione suscipit hic nihil deleniti! Nulla vel explicabo aliquam voluptatum ex nostrum consequatur, voluptatibus tenetur eos nemo facilis fuga, inventore ratione minus corrupti iure,
-                impedit porro! Id.
+                はじめまして。平成2年生まれのゆうた(`<a href="/">@yutassk</a>`)と申します。社会人歴10年目です。
+                <br />
+                職歴としては大学を卒業してから放射線技師として総合病院に勤務しています。全検査（MRI、CT、カテーテル検査、バリウム検査などの撮影業務）を担当していたのでエンジニアで言うところの「フルスタック」のような勤務状況でした。
+                <br />
+                小学4年生の頃にパソコンにハマり、ホームページ作成やプログラミング（C+、Javaなど）、ゲームのバイナリデータをいじったりしていました。
+                <br />
+                アフィリエイトを行う中でスクレイピングする必要に迫られコーディングをしたり、業務で使用するマクロを組んだりなど。
               </p>
             </div>
           </div>
