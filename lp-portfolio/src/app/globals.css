@@ -4,9 +4,8 @@
 
 body {
   width: 100%;
-  color: #fff;
+  color: #222;
   line-height: 1.7;
-  background-color: black;
 }
 
 @layer components {

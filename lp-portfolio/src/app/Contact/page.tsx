@@ -1,24 +1,32 @@
 import Link from "next/link";
 import React from "react";
+import Home from "../page";
 
 const Contact = () => {
-  const contactList: {
+  type contact = {
     title: string;
     address: string;
-  } = {
-    title: "Twitter",
-    address: "https://twitter.com/yuta_ss90",
   };
 
+  const contactList: contact[] = [
+    {
+      title: "Twitter",
+      address: "https://twitter.com/yuta_ss90",
+    },
+  ];
+
   return (
-    <div>
-      <h2>Contact</h2>
-      <dl>
-        <dt>Twitter</dt>
-        <dd>ここにアカウント名</dd>
-        <Link href="/">button</Link>
-      </dl>
-    </div>
+    <Home>
+      <div>
+        <h2>Contact</h2>
+        <p>{contactList.title}</p>
+        <dl>
+          <dt>{contactList.title}</dt>
+          <dd>{contactList.address}</dd>
+          <Link href="/">button</Link>
+        </dl>
+      </div>
+    </Home>
   );
 };
 

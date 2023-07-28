@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { Hamburger } from "./Hamburger";
-import { Link as Scroll } from "react-scroll";
+import { Hamburger } from "../components/Hamburger";
 
 export const Nav = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState<boolean>(false);
@@ -10,22 +9,43 @@ export const Nav = () => {
     setHamburgerOpen(!hamburgerOpen);
   };
 
+  type Menu = {
+    title: string;
+    link: string;
+  };
+
+  const Menus: Menu[] = [
+    {
+      title: "Profile",
+      link: "/",
+    },
+    {
+      title: "Skill",
+      link: "/Skills",
+    },
+    {
+      title: "Hobby",
+      link: "/",
+    },
+    {
+      title: "Future",
+      link: "/",
+    },
+    {
+      title: "Contact",
+      link: "/Contact",
+    },
+  ];
+
   return (
     <div>
       <nav className="navigation">
         <ul className="">
-          <li className="">
-            <Link href="/src/app/Profile.tsx">Profile</Link>
-          </li>
-          <li className="">
-            <Link href="/Contact">Skill</Link>
-          </li>
-          <li className="">
-            <Link href="/">Hobby</Link>
-          </li>
-          <li className="">
-            <Link href="/">Future</Link>
-          </li>
+          {Menus.map((menu) => (
+            <li key={menu.title} className="">
+              <Link href={menu.link}>{menu.title}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <div className="hamburger" onClick={toggleHamburger}>
