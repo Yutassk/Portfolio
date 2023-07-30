@@ -1,13 +1,13 @@
 import Link from "next/link";
 import React from "react";
 
-const Contact = () => {
+const Skill = () => {
   return (
     <div>
-      <h2>Contact Page</h2>
+      <h2>Skill Page</h2>
       <Link href="/">button</Link>
     </div>
   );
 };
 
-export default Contact;
+export default Skill;
