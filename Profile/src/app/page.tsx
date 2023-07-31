@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default function Home() {
   return (
     <>

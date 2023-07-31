@@ -4,7 +4,7 @@ export const Hamburger = ({ isOpen }: any) => {
   return (
     <div className="hamburger">
       <div className="burger burger1" />
-      <div className="burger burger2" />
+      <div className="burger_center burger2" />
       <div className="burger burger3" />
 
       <style jsx>
@@ -23,6 +23,15 @@ export const Hamburger = ({ isOpen }: any) => {
             height: 0.25rem;
             border-radius: 10px;
             background-color: #fff;
+            transform-origin: 1px;
+            transition: all 0.3s linear;
+          }
+
+          .burger_center {
+            width: 1.5rem;
+            height: 0.25rem;
+            border-radius: 10px;
+            background-color: #4ade80;
             transform-origin: 1px;
             transition: all 0.3s linear;
           }
