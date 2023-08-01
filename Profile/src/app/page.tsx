@@ -24,13 +24,12 @@ export default function Home() {
           </div>
           <div className="container relative mx-auto">
             <div className="items-center flex flex-wrap">
-              <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                <div className="pr-12">
-                  <h1 className="text-white font-semibold text-5xl">Your story starts with us.</h1>
-                  <p className="mt-4 text-lg text-gray-300">
-                    This is a simple example of a Landing Page you can build using Tailwind Starter Kit. It features multiple CSS components based on the Tailwindcss design system.
-                  </p>
-                </div>
+              <div className="w-full lg:w-6/12 px-4 mx-auto text-center">
+                <h1 className="text-white font-semibold text-5xl">タイトル？</h1>
+                <p className="mt-4 text-lg text-gray-300">
+                  ここにかるくせつめいがきする***This is a simple example of a Landing Page you can build using Tailwind Starter Kit. It features multiple CSS components based on the Tailwindcss
+                  design system.
+                </p>
               </div>
             </div>
           </div>
@@ -41,7 +40,7 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="pb-20 bg-gray-300 -mt-24">
+        <section className="pb-20 bg-gray-300 -mt-24 text-gray-600">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
@@ -50,8 +49,8 @@ export default function Home() {
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
                       <i className="fas fa-award"></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Awarded Agency</h6>
-                    <p className="mt-2 mb-4 text-gray-600">Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.</p>
+                    <h3 className="text-xl font-semibold">Awarded Agency</h3>
+                    <p className="mt-2 mb-4">Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.</p>
                   </div>
                 </div>
               </div>
@@ -62,7 +61,7 @@ export default function Home() {
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
                       <i className="fas fa-retweet"></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Free Revisions</h6>
+                    <h3 className="text-xl font-semibold">Free Revisions</h3>
                     <p className="mt-2 mb-4 text-gray-600">Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.</p>
                   </div>
                 </div>
@@ -74,7 +73,7 @@ export default function Home() {
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
                       <i className="fas fa-fingerprint"></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Verified Company</h6>
+                    <h3 className="text-xl font-semibold">Verified Company</h3>
                     <p className="mt-2 mb-4 text-gray-600">Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!</p>
                   </div>
                 </div>
@@ -319,7 +318,7 @@ export default function Home() {
                 <div className="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
                   <i className="fas fa-medal text-xl"></i>
                 </div>
-                <h6 className="text-xl mt-5 font-semibold text-white">Excelent Services</h6>
+                <h3 className="text-xl mt-5 font-semibold text-white">Excelent Services</h3>
                 <p className="mt-2 mb-4 text-gray-500">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
               <div className="w-full lg:w-3/12 px-4 text-center">

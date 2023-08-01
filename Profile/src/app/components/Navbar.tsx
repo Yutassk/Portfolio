@@ -42,13 +42,19 @@ export function Navbar(props: { transparent: any }) {
           <Image src={"/yuta.png"} alt="" width={40} height={40} className="rounded-full" />
           <h2 className={(props.transparent ? "text-white" : "text-gray-800") + " text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase ml-2"}>Yuta's Portfolio</h2>
         </Link>
-        <div onClick={toggleHamburger} className="hamburger">
+        <div onClick={toggleHamburger} className={"md:hidden inline pt-3 ml-3 z-20 fixed right-3 top-3"}>
           <Hamburger isOpen={hamburgerOpen} />
         </div>
-        <div className="navigation">
-          <ul>
+        <div className={"md:w-full h-1/2"}>
+          <ul
+            className={`${
+              hamburgerOpen
+                ? "inline bg-green-500 h-2/5 w-screen fixed right-0 top-0 z-10 text-3xl m-auto flex flex-col justify-around items-center"
+                : "hidden md:flex md:flex-wrap md:float-right md:my-5 md:px-6 md:overflow-hidden"
+            }`}
+          >
             {NavList.map((nav) => (
-              <li key={nav.title}>
+              <li key={nav.title} className="list-none pr-3">
                 <Link className={"uppercase font-bold text-white"} href={nav.link}>
                   {nav.title}
                 </Link>
@@ -57,64 +63,6 @@ export function Navbar(props: { transparent: any }) {
           </ul>
         </div>
       </div>
-      <style jsx>{`
-        .navigation {
-          width: 100%;
-          height: 50px;
-        }
-
-        .navigation ul {
-          display: flex;
-          flex-wrap: wrap;
-          float: right;
-          margin: 20 0px;
-          padding: 0 25px;
-          overflow: hidden;
-        }
-
-        .navigation ul li {
-          list-style-type: none;
-          padding-right: 10px;
-        }
-
-        .hamburger {
-          display: none;
-          z-index: 6;
-        }
-
-        @media (max-width: 767px) {
-          .hamburger {
-            display: inline;
-            padding-top: 10px;
-            margin-left: 10px;
-            z-index: 10;
-            position: fixed;
-            right: 10px;
-            top: 10px;
-          }
-
-          .navigation {
-            display: ${hamburgerOpen ? "inline" : "none"};
-          }
-
-          .navigation ul {
-            display: inline;
-            background-color: #3db680;
-            height: 50vh;
-            width: 100vw;
-            position: fixed;
-            right: 0;
-            top: 0;
-            z-index: 1;
-            font-size: 2rem;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-          }
-        }
-      `}</style>
     </nav>
   );
 }
