@@ -3,9 +3,9 @@ import React from "react";
 export const Hamburger = ({ isOpen }: any) => {
   return (
     <div className="hamburger">
-      <div className="burger burger1" />
-      <div className="burger_center burger2" />
-      <div className="burger burger3" />
+      <div className="burger burger1 bg-slate-200" />
+      <div className="burger_center burger2 bg-cyan-800" />
+      <div className="burger burger3 bg-slate-200" />
 
       <style jsx>
         {`
@@ -22,7 +22,6 @@ export const Hamburger = ({ isOpen }: any) => {
             width: 2rem;
             height: 0.25rem;
             border-radius: 10px;
-            background-color: #fff;
             transform-origin: 1px;
             transition: all 0.3s linear;
           }
@@ -31,7 +30,6 @@ export const Hamburger = ({ isOpen }: any) => {
             width: 1.5rem;
             height: 0.25rem;
             border-radius: 10px;
-            background-color: #4ade80;
             transform-origin: 1px;
             transition: all 0.3s linear;
           }
