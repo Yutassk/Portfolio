@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { MainList } from "./Descdata";
 import { IconContext } from "react-icons";
+import { useInView } from "react-intersection-observer";
 
 export const Header = () => {
   const Profile: { name: string; title: string; desc: string } = {
@@ -11,6 +12,10 @@ export const Header = () => {
     title: "Junior Engineer",
     desc: "ここにかるい自己紹介文かくよおーーー",
   };
+
+  const [ref, inView] = useInView({
+    rootMargin: "-100px 0px",
+  });
 
   type IconList = {
     title: string;
@@ -56,6 +61,8 @@ export const Header = () => {
           </li>
         ))}
       </ul>
+      <p ref={ref}>intersection observerのれんしゅう</p>
+      <h2 className={inView ? "text-red-500" : "text-blue-600"}>こんなかきかたでもいけるの？</h2>
     </header>
   );
 };
