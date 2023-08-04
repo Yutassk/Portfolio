@@ -4,8 +4,8 @@ import useMouseStalker from "../../../hooks/useMouthStalker";
 import { animated } from "react-spring";
 
 const initMouse = {
-  width: 400,
-  height: 400,
+  width: 800,
+  height: 800,
   borderRadius: 400,
   opacity: 0,
   top: 0,
@@ -24,7 +24,6 @@ const mouseStyles: CSSProperties = {
   position: "fixed",
   zIndex: 100,
   background: "radial-gradient(circle at center, rgba(29, 78, 216, 0.15), transparent 80%)",
-  //   mixBlendMode: "difference",
 };
 
 export const MouseStalker: FC = () => {
