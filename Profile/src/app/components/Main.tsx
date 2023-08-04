@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { MainList } from "./Descdata";
 import { Footer } from "./Footer";
-import { FiArrowUpRight } from "react-icons/Fi";
+import { FiArrowUpRight } from "react-icons/fi";
 import { useInView } from "react-intersection-observer";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
