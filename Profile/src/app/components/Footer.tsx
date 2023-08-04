@@ -6,7 +6,7 @@ export function Footer() {
       <hr className="border-gray-400" />
 
       <div className="">
-        <div className="">このサイトはNext.jsとTailwindCSSで作成しました。</div>
+        <div className="">このサイトはTypeScript、React、Next.js、TailwindCSS、react-springで作成しました。</div>
       </div>
     </footer>
   );

@@ -2,10 +2,12 @@ import React from "react";
 import { Navbar } from "./components/Navbar";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
+import MouseStalker from "./components/MouseStalker";
 
 export default function Home() {
   return (
     <>
+      <MouseStalker />
       <div className="relative">
         <div
           className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
