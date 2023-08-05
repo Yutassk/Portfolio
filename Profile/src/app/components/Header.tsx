@@ -52,7 +52,7 @@ export const Header = () => {
       <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
         {Icons.map((icon) => (
           <li key={icon.link} className="mr-5 text-xs">
-            <Link href={"/"} className="block hover:text-slate-200" target="_blank" rel="noreferrer">
+            <Link href={"/"} className="z-50  hover:text-slate-200" target="_blank" rel="noreferrer">
               <IconContext.Provider value={{ size: "24" }}>
                 <span className="sr-only">{icon.title}</span>
                 {React.createElement(icon.name)}

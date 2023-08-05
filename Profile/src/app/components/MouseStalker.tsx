@@ -22,7 +22,7 @@ const springConfig = {
 const mouseStyles: CSSProperties = {
   pointerEvents: "none",
   position: "fixed",
-  zIndex: 100,
+  // zIndex: 100,
   background: "radial-gradient(circle at center, rgba(29, 78, 216, 0.15), transparent 80%)",
 };
 

@@ -54,7 +54,7 @@ export const Main = () => {
         <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
           {Icons.map((icon) => (
             <li key={icon.link} className="mr-5 text-xs">
-              <Link href={"/"} className="block hover:text-slate-200" target="_blank" rel="noreferrer">
+              <Link href={icon.link} className="block hover:text-slate-200" target="_blank" rel="noreferrer">
                 <IconContext.Provider value={{ size: "24" }}>
                   <span className="sr-only">{icon.title}</span>
                   {React.createElement(icon.name)}
@@ -67,7 +67,7 @@ export const Main = () => {
       <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
         {Mains.map((main) => (
           <section key={main.title} id={main.title} className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:p-0 lg:opacity-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen  px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:p-0 lg:opacity-0">
               <h2 ref={ref} className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
                 {main.title}
               </h2>
@@ -84,7 +84,7 @@ export const Main = () => {
         {/* 経歴カード */}
         {/* ここSwitch文使って書き換えられる？ */}
         <section className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:p-0 lg:opacity-0">
+          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:p-0 lg:opacity-0">
             <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">書き換えたいなぁ</h2>
           </div>
           <div>
