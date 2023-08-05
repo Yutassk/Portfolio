@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import MouseStalker from "./components/MouseStalker";
+import { Footer } from "./components/Footer";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
 
         <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 lg:px-24 lg:py-0">
           <div className="lg:flex lg:justify-between lg:gap-4">
-            {/* <Header /> */}
+            <Header />
             <Main />
           </div>
         </div>

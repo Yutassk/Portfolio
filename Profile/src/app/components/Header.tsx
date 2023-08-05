@@ -10,7 +10,7 @@ export const Header = () => {
   const Profile: { name: string; title: string; desc: string } = {
     name: "Yuta Sasaki",
     title: "Junior Engineer",
-    desc: "ここにかるい自己紹介文かくよおーーー",
+    desc: "2023.5~ 本格的にプログラミング勉強開始しました。主に書籍、公式ドキュメントを読み解きながら実装を進めています。",
   };
 
   const [ref, inView] = useInView({
@@ -24,8 +24,8 @@ export const Header = () => {
     link: string;
   };
   const Icons: IconList[] = [
-    { title: "Github", name: FaGithub, value: `size:"24"`, link: "github.com" },
-    { title: "Twitter", name: FaTwitter, value: `size:"24"`, link: "twitter.com" },
+    { title: "Github", name: FaGithub, value: `size:"24"`, link: "https://github.com/Yutassk" },
+    { title: "Twitter", name: FaTwitter, value: `size:"24"`, link: "https://twitter.com/yuta_ss90" },
   ];
 
   const Mains = useContext(MainList);
@@ -52,7 +52,7 @@ export const Header = () => {
       <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
         {Icons.map((icon) => (
           <li key={icon.link} className="mr-5 text-xs">
-            <Link href={"/"} className="z-50  hover:text-slate-200" target="_blank" rel="noreferrer">
+            <Link href={icon.link} className="z-50  hover:text-slate-200" target="_blank" rel="noreferrer">
               <IconContext.Provider value={{ size: "24" }}>
                 <span className="sr-only">{icon.title}</span>
                 {React.createElement(icon.name)}
@@ -61,8 +61,6 @@ export const Header = () => {
           </li>
         ))}
       </ul>
-      <p ref={ref}>intersection observerのれんしゅう</p>
-      <h2 className={inView ? "text-red-500" : "text-blue-600"}>こんなかきかたでもいけるの？</h2>
     </header>
   );
 };
