@@ -11,7 +11,7 @@ export default function Home() {
       <div className="relative">
         <div
           className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
-          style={{ background: "radial-gradient(600px at 550px 24px, rgba(29, 78, 216, 0.15), transparent 80%);" }}
+          style={{ background: "radial-gradient(600px at 550px 24px, rgba(29, 78, 216, 0.15), transparent 80%)" }}
         ></div>
         <div className="lg:hidden">
           <Navbar />

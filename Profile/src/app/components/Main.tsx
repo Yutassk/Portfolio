@@ -172,7 +172,7 @@ export const Main = () => {
                   <h3>
                     <a
                       className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
-                      href="/"
+                      href="https://portfolio-eight-mu-52.vercel.app/"
                       target="_blank"
                       rel="noreferrer"
                     >
