@@ -95,7 +95,7 @@ export const Main = () => {
           </ol>
           <h3 className="font-medium leading-snug text-slate-200">
             <div>
-              <Link href={"/Experience"}>
+              <Link href={"/Experience#"}>
                 <div className="inline-flex items-baseline font-medium leading-tight text-slate-200  group/link text-base">
                   <span className="group-hover/link:border-b group-hover/link:border-teal-300">View Full Experience</span>
                   <div

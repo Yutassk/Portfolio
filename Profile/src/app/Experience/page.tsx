@@ -6,7 +6,6 @@ import { FiArrowLeft } from "react-icons/fi";
 const experience = () => {
   return (
     <>
-      <MouseStalker />
       <div className="relative">
         <div className="pointer-events-none fixed inset-0 z-30 transition duration-300 "></div>
 
@@ -143,6 +142,7 @@ const experience = () => {
           </div>
         </div>
       </div>
+      <MouseStalker />
     </>
   );
 };
