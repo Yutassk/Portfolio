@@ -25,7 +25,6 @@ export function Navbar() {
               <Link href={`#${main.title}`}>{main.title}</Link>
             </li>
           ))}
-          ここにぼたんつけたい
         </ul>
       </div>
     </>
