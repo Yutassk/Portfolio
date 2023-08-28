@@ -4,14 +4,27 @@ import DatePicker from "react-datepicker";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
 
+const today = new Date();
+const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+
+const ShiftItem = ({ id, date, memos, time, tZoneOptions, handleDateChange, chooseTime, handleMemoChange }) => {
+  return (
+    <li className="flex justify-around items-center" key={id}>
+      <DatePicker className="" selected={date} minDate={nextMonth} onChange={(date) => handleDateChange(id, date)} dateFormat="MM月dd日" />
+
+      <Select options={tZoneOptions} onChange={(selectedOption) => chooseTime(id, selectedOption)} />
+
+      <input type="text" placeholder="備考" onChange={(e) => handleMemoChange(id, e.target.value)} value={memos} />
+    </li>
+  );
+};
+
 export default function Home() {
-  const today = new Date();
-  const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
   const [chooseDate, setChooseDate] = useState(nextMonth);
   const [memos, setMemos] = useState("");
 
-  type shift = { id: number; date: Date; memo: string; time: string };
-  const shifts: shift[] = [{ id: 0, date: chooseDate, memo: "", time: "" }];
+  type shift = { id: number; date: Date; memos: string; time: string };
+  const shifts: shift[] = [{ id: 0, date: chooseDate, memos: "", time: "" }];
   const [shiftDate, setShiftDate] = useState<shift[]>(shifts);
 
   const tZone = [{ label: "終日" }, { label: "午前" }, { label: "午後" }];
@@ -24,7 +37,7 @@ export default function Home() {
       {
         id: shiftDate.length,
         date: chooseDate,
-        memo: "",
+        memos: "",
         time: "",
       },
     ]);
@@ -44,10 +57,10 @@ export default function Home() {
   //シフト提出して保存
   const enterShift = (date: Date, memo: string) => {
     console.log(shiftDate);
-    console.log(`time:${time}`);
-    console.log(`chooseDate:${chooseDate}`);
-    console.log(`memos:${memos}`);
-    console.log(`id${shiftDate.id}`);
+  };
+
+  const updateShiftItem = (id, updateItem) => {
+    setShiftDate((prevShifts) => prevShifts.map((shift) => (shift.id === id ? { ...shift, ...updateItem } : shift)));
   };
 
   return (
@@ -75,7 +88,7 @@ export default function Home() {
           ふやすぼたん
         </button>
         <ul className="">
-          {shiftDate.map((shift) => (
+          {/* {shiftDate.map((shift) => (
             <li className="flex justify-around items-center" key={shift.id}>
               <DatePicker className="" selected={chooseDate} minDate={nextMonth} onChange={handleDate} dateFormat="MM月dd日" />
 
@@ -83,6 +96,20 @@ export default function Home() {
 
               <input type="text" placeholder="備考" onChange={(m) => setMemos(m.target.value)} value={memos} />
             </li>
+          ))} */}
+
+          {shiftDate.map((shift) => (
+            <ShiftItem
+              key={shift.id}
+              id={shift.id}
+              date={shift.date}
+              memos={shift.memos}
+              time={shift.time}
+              tZoneOptions={tZone}
+              handleDateChange={handleDate}
+              chooseTime={chooseTime}
+              handleMemoChange={(id, memo) => updateShiftItem(id, { memos: memo })}
+            />
           ))}
         </ul>
         <button
