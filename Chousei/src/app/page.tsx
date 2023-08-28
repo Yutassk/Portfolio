@@ -1,5 +1,5 @@
 "use client";
-import { forwardRef, useState } from "react";
+import { useState } from "react";
 import DatePicker from "react-datepicker";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
@@ -7,48 +7,47 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function Home() {
   const today = new Date();
   const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
-  const [startDate, setStartDate] = useState(today);
-  const [timezone, setTimezone] = useState("終日");
-  const [isOpen, setIsOpen] = useState(false);
+  const [chooseDate, setChooseDate] = useState(nextMonth);
   const [memos, setMemos] = useState("");
-  let nextId = 3;
 
-  type shift = { id: number; memo: string };
-  const shifts: shift[] = [{ id: 0, memo: "いーち" }];
+  type shift = { id: number; date: Date; memo: string; time: string };
+  const shifts: shift[] = [{ id: 0, date: chooseDate, memo: "", time: "" }];
   const [shiftDate, setShiftDate] = useState<shift[]>(shifts);
 
   const tZone = [{ label: "終日" }, { label: "午前" }, { label: "午後" }];
+  const [time, setTime] = useState("");
 
   //シフト希望の枠増やす
   const addDate = (a) => {
-    // a.preventDefault();
-    // nextId++;
-
     setShiftDate([
       ...shiftDate,
       {
         id: shiftDate.length,
-        memo: `${shiftDate.length}番目の枠です`,
+        date: chooseDate,
+        memo: "",
+        time: "",
       },
     ]);
     console.log(shiftDate);
   };
 
-  //時間帯選択の表示
-  const openClick = (e) => {
-    e.preventDefault();
-    setIsOpen(!isOpen);
+  const chooseTime = (cTime) => {
+    setTime(cTime.label);
+    console.log(time);
   };
 
-  //日付選んだらstateに保存して時間帯表示閉じる
-  const timeChange = (tex) => {
-    setTimezone(tex);
-    setIsOpen(!isOpen);
+  const handleDate = (date) => {
+    setChooseDate(date);
+    console.log(chooseDate);
   };
 
   //シフト提出して保存
   const enterShift = (date: Date, memo: string) => {
     console.log(shiftDate);
+    console.log(`time:${time}`);
+    console.log(`chooseDate:${chooseDate}`);
+    console.log(`memos:${memos}`);
+    console.log(`id${shiftDate.id}`);
   };
 
   return (
@@ -77,33 +76,19 @@ export default function Home() {
         </button>
         <ul className="">
           {shiftDate.map((shift) => (
-            // <li key={shift.id}>{shift.memo}</li>
-
             <li className="flex justify-around items-center" key={shift.id}>
-              <DatePicker className="" selected={nextMonth} minDate={nextMonth} onChange={(date) => setStartDate(date)} dateFormat="MM月dd日" value={startDate} />
-              {/* <div> */}
-              {/* <button className="relative" onClick={(e) => openClick(e)} onChange={(e) => timeChange(e)}>
-                  {timezone}
-                </button> */}
+              <DatePicker className="" selected={chooseDate} minDate={nextMonth} onChange={handleDate} dateFormat="MM月dd日" />
 
-              <Select options={tZone} />
+              <Select options={tZone} onChange={chooseTime} />
 
-              {/* {isOpen && (
-                  <div className="absolute bg-slate-200 ">
-                    <div onClick={(tex) => timeChange(tex.target.innerText)}>終日</div>
-                    <div onClick={(tex) => timeChange(tex.target.innerText)}>午前</div>
-                    <div onClick={(tex) => timeChange(tex.target.innerText)}>午後</div>
-                  </div>
-                )} */}
-              {/* </div> */}
-              <input type="text" placeholder="備考" onChange={(m) => setMemos(m.target.value)} />
+              <input type="text" placeholder="備考" onChange={(m) => setMemos(m.target.value)} value={memos} />
             </li>
           ))}
         </ul>
         <button
           className="bg-slate-200"
           onClick={() => {
-            enterShift(startDate, memos);
+            enterShift(chooseDate, memos);
           }}
         >
           てすと
