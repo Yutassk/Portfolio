@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   //シフト希望の枠増やす
-  const addDate = (a) => {
+  const addDate = () => {
     setShiftData([
       ...shiftData,
       {
@@ -38,12 +38,16 @@ export default function Home() {
     ]);
   };
 
-  const shiftDate = (id: number, date: Date) => {
-    updateShiftItem(id, "date", date);
+  const shiftDate = (id: number, date: Date | null) => {
+    if (date !== null) {
+      updateShiftItem(id, "date", date);
+    }
   };
 
-  const chooseTime = (id: number, selectedTime: { label: string }) => {
-    updateShiftItem(id, "time", selectedTime.label);
+  const chooseTime = (id: number, selectedTime: { label: string } | null) => {
+    if (selectedTime !== null) {
+      updateShiftItem(id, "time", selectedTime.label);
+    }
   };
 
   const shiftMemo = (id: number, memo: ChangeEvent<HTMLInputElement>) => {
