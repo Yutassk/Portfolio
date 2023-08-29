@@ -12,16 +12,23 @@ function App() {
     },
   ]);
 
+  const updateShiftData = (id, property, value) => {
+    setShiftData((prevData) => prevData.map((item) => (item.id === id ? { ...item, [property]: value } : item)));
+  };
+
   const shiftDate = (id, date) => {
-    setShiftData((prevData) => prevData.map((item) => (item.id === id ? { ...item, date: date.target.value } : item)));
+    // setShiftData((prevData) => prevData.map((item) => (item.id === id ? { ...item, date: date.target.value } : item)));
+    updateShiftData(id, "date", date.target.value);
   };
 
   const shiftMemo = (id, memo) => {
-    setShiftData((prevData) => prevData.map((item) => (item.id === id ? { ...item, memo: memo.target.value } : item)));
+    // setShiftData((prevData) => prevData.map((item) => (item.id === id ? { ...item, memo: memo.target.value } : item)));
+    updateShiftData(id, "memo", memo.target.value);
   };
 
   const chooseTime = (id, selectedTime) => {
-    setShiftData((prevData) => prevData.map((item) => (item.id === id ? { ...item, time: selectedTime.label } : item)));
+    // setShiftData((prevData) => prevData.map((item) => (item.id === id ? { ...item, time: selectedTime.label } : item)));
+    updateShiftData(id, "time", selectedTime.label);
   };
 
   const addInputForm = () => {
@@ -30,7 +37,9 @@ function App() {
   };
 
   const enterShift = () => {
-    console.log(shiftData);
+    //日付未入力を省いて送信
+    const filterData = shiftData.filter((item) => item.date !== "");
+    console.log(filterData);
   };
 
   return (

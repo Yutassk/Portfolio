@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import DatePicker from "react-datepicker";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
@@ -7,60 +7,52 @@ import "react-datepicker/dist/react-datepicker.css";
 const today = new Date();
 const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
 
-const ShiftItem = ({ id, date, memos, time, tZoneOptions, handleDateChange, chooseTime, handleMemoChange }) => {
-  return (
-    <li className="flex justify-around items-center" key={id}>
-      <DatePicker className="" selected={date} minDate={nextMonth} onChange={(date) => handleDateChange(id, date)} dateFormat="MM月dd日" />
-
-      <Select options={tZoneOptions} onChange={(selectedOption) => chooseTime(id, selectedOption)} />
-
-      <input type="text" placeholder="備考" onChange={(e) => handleMemoChange(id, e.target.value)} value={memos} />
-    </li>
-  );
-};
-
 export default function Home() {
-  const [chooseDate, setChooseDate] = useState(nextMonth);
-  const [memos, setMemos] = useState("");
-
-  type shift = { id: number; date: Date; memos: string; time: string };
-  const shifts: shift[] = [{ id: 0, date: chooseDate, memos: "", time: "" }];
-  const [shiftDate, setShiftDate] = useState<shift[]>(shifts);
-
   const tZone = [{ label: "終日" }, { label: "午前" }, { label: "午後" }];
-  const [time, setTime] = useState("");
+  type shift = { id: number; date: Date; memo: string; time: string; filingDate: Date };
+  const [shiftData, setShiftData] = useState<shift[]>([
+    {
+      id: 0,
+      date: nextMonth,
+      memo: "",
+      time: "",
+      filingDate: today,
+    },
+  ]);
+
+  const updateShiftItem = (id: number, property: string, value: string | Date) => {
+    setShiftData((prevData) => prevData.map((item) => (item.id === id ? { ...item, [property]: value } : item)));
+  };
 
   //シフト希望の枠増やす
   const addDate = (a) => {
-    setShiftDate([
-      ...shiftDate,
+    setShiftData([
+      ...shiftData,
       {
-        id: shiftDate.length,
-        date: chooseDate,
-        memos: "",
+        id: shiftData.length,
+        date: nextMonth,
+        memo: "",
         time: "",
+        filingDate: today,
       },
     ]);
-    console.log(shiftDate);
   };
 
-  const chooseTime = (cTime) => {
-    setTime(cTime.label);
-    console.log(time);
+  const shiftDate = (id: number, date: Date) => {
+    updateShiftItem(id, "date", date);
   };
 
-  const handleDate = (date) => {
-    setChooseDate(date);
-    console.log(chooseDate);
+  const chooseTime = (id: number, selectedTime: { label: string }) => {
+    updateShiftItem(id, "time", selectedTime.label);
+  };
+
+  const shiftMemo = (id: number, memo: ChangeEvent<HTMLInputElement>) => {
+    updateShiftItem(id, "memo", memo.target.value);
   };
 
   //シフト提出して保存
-  const enterShift = (date: Date, memo: string) => {
-    console.log(shiftDate);
-  };
-
-  const updateShiftItem = (id, updateItem) => {
-    setShiftDate((prevShifts) => prevShifts.map((shift) => (shift.id === id ? { ...shift, ...updateItem } : shift)));
+  const enterShift = () => {
+    console.log(shiftData);
   };
 
   return (
@@ -88,36 +80,15 @@ export default function Home() {
           ふやすぼたん
         </button>
         <ul className="">
-          {/* {shiftDate.map((shift) => (
-            <li className="flex justify-around items-center" key={shift.id}>
-              <DatePicker className="" selected={chooseDate} minDate={nextMonth} onChange={handleDate} dateFormat="MM月dd日" />
-
-              <Select options={tZone} onChange={chooseTime} />
-
-              <input type="text" placeholder="備考" onChange={(m) => setMemos(m.target.value)} value={memos} />
+          {shiftData.map((item) => (
+            <li className="flex justify-around items-center" key={item.id}>
+              <DatePicker selected={item.date} minDate={nextMonth} onChange={(e) => shiftDate(item.id, e)} dateFormat="MM月dd日" />
+              <Select options={tZone} onChange={(selectedTime) => chooseTime(item.id, selectedTime)} />
+              <input type="text" placeholder="備考" onChange={(e) => shiftMemo(item.id, e)} />
             </li>
-          ))} */}
-
-          {shiftDate.map((shift) => (
-            <ShiftItem
-              key={shift.id}
-              id={shift.id}
-              date={shift.date}
-              memos={shift.memos}
-              time={shift.time}
-              tZoneOptions={tZone}
-              handleDateChange={handleDate}
-              chooseTime={chooseTime}
-              handleMemoChange={(id, memo) => updateShiftItem(id, { memos: memo })}
-            />
           ))}
         </ul>
-        <button
-          className="bg-slate-200"
-          onClick={() => {
-            enterShift(chooseDate, memos);
-          }}
-        >
+        <button className="bg-slate-200" onClick={enterShift}>
           てすと
         </button>
         <ul></ul>
