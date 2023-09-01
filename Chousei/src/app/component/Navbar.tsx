@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import { Hamburger } from "./Hamburge";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,29 +8,32 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 export function Navbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-  const Mains = [
-    {
-      title: "調整さん",
-      desc1: "新しいイベントを作成する",
-      desc2: "ログイン / 会員登録",
-    },
-    {
-      title: "調整さんについて",
-      desc1: "お問い合わせ・ご要望",
-      desc2: "広告掲載について",
-    },
-    {
-      title: "関連サービス",
-      desc1: "TimeRex - 日程調整自動化サービス",
-      desc2: "調整さんカレンダー - 予約受付サービス",
-    },
-    {
-      title: "SNS",
-      desc1: "調整さん Facebook",
-      desc2: "調整さん Twitter",
-    },
-    { title: "言語", desc1: "日本語", desc2: "English" },
-  ];
+  const Mains = useMemo(
+    () => [
+      {
+        title: "調整さん",
+        desc1: "新しいイベントを作成する",
+        desc2: "ログイン / 会員登録",
+      },
+      {
+        title: "調整さんについて",
+        desc1: "お問い合わせ・ご要望",
+        desc2: "広告掲載について",
+      },
+      {
+        title: "関連サービス",
+        desc1: "TimeRex - 日程調整自動化サービス",
+        desc2: "調整さんカレンダー - 予約受付サービス",
+      },
+      {
+        title: "SNS",
+        desc1: "調整さん Facebook",
+        desc2: "調整さん Twitter",
+      },
+      { title: "言語", desc1: "日本語", desc2: "English" },
+    ],
+    []
+  );
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);

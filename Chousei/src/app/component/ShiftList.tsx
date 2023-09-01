@@ -10,6 +10,7 @@ export const ShiftList = () => {
   const tZone = [{ label: "終日" }, { label: "午前" }, { label: "午後" }];
   type shift = { id: number; date: Date; memo: string; time: string; filingDate: Date };
 
+  //希望シフト保存用オブジェクト
   const [shiftData, setShiftData] = useState<shift[]>([
     {
       id: 0,
