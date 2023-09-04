@@ -2,6 +2,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { ShiftList } from "./component/ShiftList";
 import NoticeButton from "./component/NoticeButton";
 import { Navbar } from "./component/Navbar";
+import Firebase from "./component/Firebase";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -25,6 +27,8 @@ export default function Home() {
       <main className="">
         <ShiftList />
       </main>
+      {/* <Firebase /> */}
+      <Link href={"/s?h=12fewg4534ygdfdh5"}>りんく</Link>
     </div>
   );
 }
