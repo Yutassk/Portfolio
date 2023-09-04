@@ -1,6 +1,6 @@
 "use client";
 import { initializeApp } from "firebase/app";
-import { QueryDocumentSnapshot, addDoc, collection, getDocs, getFirestore, on } from "firebase/firestore";
+import { QueryDocumentSnapshot, addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
 import React, { useEffect } from "react";
 
 const Firebase = () => {
