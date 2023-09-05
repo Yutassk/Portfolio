@@ -1,6 +1,5 @@
 "use client";
-import { initializeApp } from "firebase/app";
-import { addDoc, collection, doc, getFirestore, setDoc } from "firebase/firestore";
+import { FieldValue, Timestamp, doc, serverTimestamp, setDoc } from "firebase/firestore";
 import React, { ChangeEvent, useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import Select from "react-select";
@@ -11,7 +10,7 @@ const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
 
 export const ShiftList = () => {
   const tZone = [{ label: "終日" }, { label: "午前" }, { label: "午後" }];
-  type shift = { id: number; date: Date; memo: string; time: string; filingDate: Date };
+  type shift = { id: number; date: Date; memo: string; time: string; timestamp: FieldValue };
 
   const [name, setName] = useState<string>("");
 
@@ -38,7 +37,7 @@ export const ShiftList = () => {
       date: nextMonth,
       memo: "",
       time: "",
-      filingDate: today,
+      timestamp: serverTimestamp(),
     },
   ]);
 
@@ -72,7 +71,7 @@ export const ShiftList = () => {
         date: nextMonth,
         memo: "",
         time: "",
-        filingDate: today,
+        timestamp: serverTimestamp(),
       },
     ]);
   };

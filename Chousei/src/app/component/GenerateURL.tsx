@@ -1,8 +1,8 @@
 "use client";
 import { doc, setDoc } from "firebase/firestore";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { useCallback, useEffect, useState } from "react";
-import Select, { SingleValue } from "react-select";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { useCallback, useState } from "react";
+import Select from "react-select";
 import { db } from "./Firebase";
 
 export const GeneratedURL = () => {
@@ -21,16 +21,23 @@ export const GeneratedURL = () => {
     { label: "12月" },
   ];
 
-  const [month, setMonth] = useState("");
+  const [month, setMonth] = useState<string | null>("");
+  const [storageValue, setStorageValue] = useState<string | null>(null);
   const router = useRouter();
-  const pathname = usePathname();
   const searchParams = useSearchParams()!;
 
+  type Props = {
+    initialKey: string;
+    initialValue: string;
+  };
+
+  // シフト作成月の選択
   const chooseMonth = (selectedMonth) => {
     console.log(selectedMonth.label);
     setMonth(selectedMonth);
   };
 
+  // URL用の文字列ランダム生成
   const generateRandomString = (length: number) => {
     const characters = "ABCDDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     let randomString = "";
@@ -42,6 +49,7 @@ export const GeneratedURL = () => {
     return randomString;
   };
 
+  // URLにname,queryを設定する関数
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams);
@@ -52,27 +60,30 @@ export const GeneratedURL = () => {
     [searchParams]
   );
 
+  // URL生成、生成後のURLに遷移、URLをFirebase、Localstorageに保存
   const handleUrlGenerate = async () => {
-    const min = 30;
-    const max = 50;
+    // URLの長さを決める関数
+    const urlLengthMin = 30;
+    const urlLengthMax = 50;
 
-    let len = Math.floor(Math.random() * (max - min + 1)) + min;
+    let len = Math.floor(Math.random() * (urlLengthMax - urlLengthMin + 1)) + urlLengthMin;
     const generatedUrl = generateRandomString(len);
 
-    //Selectで選んだ月でシフトを作成
-    // try {
+    //生成されたURLをFirebaseに保存、遷移
     const docRef = await setDoc(doc(db, "shifts", generatedUrl), { シフト月: month });
     console.log("Document written with ID: ", docRef);
-    // } catch (e) {
-    //   console.error("Error adding document: ", e);
-    // }
 
     router.push("s" + "?" + createQueryString("h", generatedUrl));
-  };
 
-  // useEffect(() => {
-  //   router.push("s" + "?" + createQueryString("h", url));
-  // }, [searchParams]);
+    // localstorageにURL保存
+    const existingUrlsJSON = localStorage.getItem("deviceEventHistory");
+    const existingUrls: string[] = existingUrlsJSON ? JSON.parse(existingUrlsJSON) : [];
+
+    existingUrls.push(generatedUrl);
+
+    localStorage.setItem("deviceEventHistory", JSON.stringify(existingUrls));
+    localStorage.setItem("creatorUserId", JSON.stringify("creator"));
+  };
 
   return (
     <div className="flex flex-col items-center space-y-4 mb-4">

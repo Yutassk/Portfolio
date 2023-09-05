@@ -1,13 +1,11 @@
 import "react-datepicker/dist/react-datepicker.css";
-import { ShiftList } from "./component/ShiftList";
-import NoticeButton from "./component/NoticeButton";
-import { Navbar } from "./component/Navbar";
 import { GeneratedURL } from "./component/GenerateURL";
 import Header from "./Layout/Header";
+import LocalStorageData from "./Layout/LocalStorageData";
 
 export default function Home() {
   return (
-    <div className="container border-4 border-green-600 max-w-screen-lg leading-tight">
+    <div className=" border-4 border-green-600 max-w-screen-lg leading-tight m-auto">
       <Header />
       <p>簡単みんなのスケジュール調整ツール。今日も効率よくスケジュールを決めましょう。</p>
       <div className="">
@@ -17,6 +15,7 @@ export default function Home() {
       <main className="">
         <GeneratedURL />
       </main>
+      <LocalStorageData />
     </div>
   );
 }

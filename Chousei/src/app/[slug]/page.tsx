@@ -6,12 +6,16 @@ import Header from "../Layout/Header";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const pathname = usePathname();
-  console.log(pathname);
+  console.log(params);
+
+  const userAuth = localStorage.getItem("creatorUserId");
+  console.log(userAuth);
 
   return (
     <div>
+      {}
       <Header />
-      <div>My Post: {params.slug} slug</div>
+      <div>My Post: {params.slug}</div>
       <ShiftList />
     </div>
   );
