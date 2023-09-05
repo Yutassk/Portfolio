@@ -4,6 +4,7 @@ import { addDoc, collection, doc, getFirestore, setDoc } from "firebase/firestor
 import React, { ChangeEvent, useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import Select from "react-select";
+import { db } from "./Firebase";
 
 const today = new Date();
 const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
@@ -12,17 +13,6 @@ export const ShiftList = () => {
   const tZone = [{ label: "終日" }, { label: "午前" }, { label: "午後" }];
   type shift = { id: number; date: Date; memo: string; time: string; filingDate: Date };
 
-  const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_APP_ID,
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
   const [name, setName] = useState<string>("");
 
   const changeName = (inputName: string) => {
@@ -86,11 +76,6 @@ export const ShiftList = () => {
       },
     ]);
   };
-
-  //シフト提出して保存
-  // const enterShift = () => {
-  //   console.log(shiftData);
-  // };
 
   return (
     <div>
