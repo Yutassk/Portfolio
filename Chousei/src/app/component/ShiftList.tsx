@@ -21,7 +21,7 @@ export const ShiftList = () => {
   const enterShift = () => {
     //データ追加
     try {
-      const docRef = setDoc(doc(db, "users", `${name}`), {
+      const docRef = setDoc(doc(db, "shifts", `${name}`), {
         ...shiftData,
       });
       console.log("Document written with ID: ", docRef);
